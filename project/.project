@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>webproject2</name>
+	<name>projectt</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -37,32 +37,27 @@
 		<link>
 			<name>.classpath</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/webproject/webproject/project/.classpath</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/project/webproject/project/.classpath</locationURI>
 		</link>
 		<link>
 			<name>.project</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/webproject/webproject/project/.project</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/project/webproject/project/.project</locationURI>
 		</link>
 		<link>
 			<name>.settings</name>
 			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/webproject/webproject/project/.settings</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/project/webproject/project/.settings</locationURI>
 		</link>
 		<link>
 			<name>WebContent</name>
 			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/webproject/webproject/project/WebContent</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/project/webproject/project/WebContent</locationURI>
 		</link>
 		<link>
 			<name>build</name>
 			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/webproject/webproject/project/build</locationURI>
-		</link>
-		<link>
-			<name>src</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/webproject/webproject/project/src</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/project/webproject/project/build</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
