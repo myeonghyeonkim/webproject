@@ -1,0 +1,54 @@
+/* Reset CSS: from YUI2: Reset CSS */
+html{color:#000;
+	background:#888; 
+	padding:20px 0;
+	font: 12px/18px "¸¼Àº °íµñ", "Malgun Gothic", "±¼¸²", "Gulim", Verdana, Arial, Tahoma;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{font-size:100%;}
+
+/*HTML*/
+
+#wrap{width:700px; margin:0 auto; background-color:white;}
+#top{width:700px; height:100px; background-color:gray;}
+#top_left{width:65%; height:100%; background-color:blue; float:left;}
+#top_right{width:25%; height:100%; float:right;}
+#body{width:700px; height:500px; background-color:pink;}
+/* UL,LI Source
+#body ul li{
+display:block; float:left; width:48%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+}
+*/
+#body_1{
+display:block; float:left; width:60%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+}
+#body_2{
+display:block; float:left; width:36%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+}
+#body_3{
+display:block; float:left; width:60%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+}
+#body_4{
+display:block; float:left; width:36%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+}
+#body_5{
+display:block; float:left; width:70%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+}
+
+#bottom{width:700px; height:120px; background-color:red;}
+
+
+
