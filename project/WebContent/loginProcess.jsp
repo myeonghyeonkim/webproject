@@ -7,6 +7,7 @@
 	String pwd=request.getParameter("pwd");
 	
 	Connection conn=null; 
+	
 	//Statement stmt=null; 직접sql문을 수행시킬수 있다.
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
