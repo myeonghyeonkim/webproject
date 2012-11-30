@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>
@@ -22,7 +22,7 @@
 		String url="jdbc:mysql://localhost:3306/webpro";
 		String user="admin";
 		String user_pwd="aldks12";
-		Class.forName("com.mysql.jdbc.Driver");//µÂ∂Û¿Ãπˆ
+		Class.forName("com.mysql.jdbc.Driver");//ÎìúÎùºÏù¥Î≤Ñ
   		//Context init = new InitialContext();
   		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
   		

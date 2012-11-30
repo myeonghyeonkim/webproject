@@ -15,6 +15,7 @@
 	<tr><td>아이디 : </td><td><input type="text" name="id"/></td></tr>
 	<tr><td>비밀번호 : </td><td><input type="password" name="pwd"/></td></tr>
 	<tr><td>이름 : </td><td><input type="text" name="name"/></td></tr>
+	<tr><td>이메일 : </td><td><input type="text" name="email"/></td></tr>
 	
 	<tr><td>핸드폰번호 : </td><td><input type="text" name="call1"
 							size="4" />&nbsp;-&nbsp; <input type="text" name="call2" size="4" />&nbsp;-&nbsp;

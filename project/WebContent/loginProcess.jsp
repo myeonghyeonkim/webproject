@@ -3,6 +3,7 @@
 <%-- <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>--%>
 <%
+	request.setCharacterEncoding("utf-8");
 	String id=request.getParameter("id");
 	String pwd=request.getParameter("pwd");
 	
@@ -33,13 +34,13 @@
   			if(pwd.equals(rs.getString("pwd"))){
   				session.setAttribute("id",id);
   				out.println("<script>");
-  		  	out.println("location.href='main.jsp'");
+  		  	out.println("location.href='index.jsp'");
   		  	out.println("</script>");
   			}
   		}
   		
   		out.println("<script>");
-  		out.println("location.href='loginForm.jsp'");
+  		out.println("location.href='index.jsp'");
   		out.println("</script>");
 	}catch(Exception e){
 		e.printStackTrace();

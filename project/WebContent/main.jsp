@@ -4,6 +4,7 @@
 
 	if (session.getAttribute("id")!=null){
 		id=(String)session.getAttribute("id");
+		out.println("location.href='index.jsp'");
 	}else{
 		out.println("<script>");
 		out.println("location.href='index.jsp'");

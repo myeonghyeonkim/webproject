@@ -145,7 +145,7 @@ while (rs.next()){
 	out.println(strTitle);
 %>
 
-</a><br>
+</a><br>tr
                         
 <DIV id='<%= "HideShow" + j%>'style="visibility:hidden;position:
                                 absolute;left:369px; top:227px; width:157px; 
