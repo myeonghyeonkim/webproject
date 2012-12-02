@@ -48,7 +48,7 @@
 <%		
 		}
 		
-		String sql2 = "INSERT INTO user VALUES (?,?,?,?,?,?,?,?,?)";		//디비 insert
+		String sql2 = "INSERT INTO user VALUES (?,?,?,?,?,?,?)";		//디비 insert
 
 		pstmt = conn.prepareStatement(sql2);
 		
@@ -57,10 +57,8 @@
 		pstmt.setString(3, name);
 		pstmt.setString(4, email);
 		pstmt.setString(5, phone);
-		pstmt.setString(6, phone);
-		pstmt.setString(7, phone);
-		pstmt.setString(8, mypage_url);
-		pstmt.setString(9, photo);
+		pstmt.setString(6, mypage_url);
+		pstmt.setString(7, photo);
 
 		pstmt.executeUpdate();
 %>

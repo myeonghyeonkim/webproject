@@ -82,7 +82,7 @@
 		<div id="mypage_main">
 			
 			<h3>	이름 : <%=rs.getString("name") %><br/></h3>
-			<h3>	핸드폰 번호 : <%=rs.getString("call1") %><br/></h3>
+			<h3>	핸드폰 번호 : <%=rs.getString("phone") %><br/></h3>
 			<h3>	이메일 : <%=rs.getString("email") %><br/></h3>
 				
 		</div>
