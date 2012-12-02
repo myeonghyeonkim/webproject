@@ -15,13 +15,14 @@
 	String meeting_time_end = request.getParameter("select_6");
 	String sign_time_start = request.getParameter("select_7");
 	String sign_time_end = request.getParameter("select_8");
-	String meeting_day =request.getParameter("meeting_day");
+	String meeting_day_start =request.getParameter("meeting_day_start");
+	String meeting_day_end =request.getParameter("meeting_day_end");
 	String sign_day_start=request.getParameter("sign_day_start");
 	String sign_day_end = request.getParameter("sign_day_end");
 	String group_image =request.getParameter("group_image");
 	String meeting_explain =request.getParameter("intro");
 	String meeting_name =request.getParameter("meeting_name");
-	int part_person =1;
+	int part_person =Integer.parseInt(request.getParameter("limit_user_num"));
 	String meeting_place =request.getParameter("input_place");
 	String meeting_map = request.getParameter("map");
 	
@@ -50,8 +51,8 @@
 		//pstmt.setInt(1, studygroup_id);
 		//rs = pstmt.executeQuery();
 		String sql2 = "INSERT INTO studygroup(category_1,category_2,category_3,category_4,meeting_time_start,meeting_time_end" + 
-				",sign_time_start,sign_time_end,meeting_day,sign_day_start,sign_day_end,group_image,meeting_explain,meeting_name"+
-		",part_person,meeting_place,meeting_map,user_id,meeting_subject) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";		//디비 insert
+				",sign_time_start,sign_time_end,meeting_day_start,sign_day_start,sign_day_end,group_image,meeting_explain,meeting_name"+
+		",part_person,meeting_place,meeting_map,user_id,meeting_subject,meeting_day_end) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";		//디비 insert
 
 		pstmt = conn.prepareStatement(sql2);
 		
@@ -64,7 +65,7 @@
 		pstmt.setString(6, meeting_time_end);
 		pstmt.setString(7, sign_time_start);
 		pstmt.setString(8, sign_time_end);
-		pstmt.setString(9, meeting_day);
+		pstmt.setString(9, meeting_day_start);
 		pstmt.setString(10, sign_day_start);
 		pstmt.setString(11, sign_day_end);
 		pstmt.setString(12, group_image);
@@ -76,7 +77,8 @@
 		pstmt.setString(17, meeting_map);
 		pstmt.setString(18, user_id);
 		pstmt.setString(19, meeting_subject);
-
+		pstmt.setString(20, meeting_day_end);
+	
 		pstmt.executeUpdate();
 %>
 

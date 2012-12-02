@@ -56,6 +56,19 @@
 		  showButtonPanel: true
 		 });
 		});
+	$(function() {
+		  $('#datepicker_4').datepicker({
+		  changeMonth: true, changeYear: true,
+		  yearRange: '2009:2020',
+		  showOn: 'button', buttonImage: 'image/datepicker.gif', buttonImageOnly: true,
+		  // buttonText:'선택',
+		  altField: '#datepicker', altFormat: 'yy-mm-dd (D)',
+		  defaultDate: '+0m+0d' ,
+		  numberOfMonths: 2,
+		  showButtonPanel: true
+		 });
+		});
+
 
 	</script>
 	
@@ -145,7 +158,7 @@
 				</tr>
 				<tr>
 					<td><input type="text" name="meeting_name">
-					<td><input type="text" name="limit_num">
+					<td><input type="text" name="limit_user_num">
 				</tr>
 			</table>
 		</div>
@@ -155,7 +168,7 @@
 				<p>모임기간설정</p>
 				<tr>
 					  <td class="demo">
-  					<input type="text" id="datepicker_1" name="meeting_day" size="13" readonly>
+  					<input type="text" id="datepicker_1" name="meeting_day_start" size="13" readonly>
 						</td>
   				
 						<td>
@@ -188,7 +201,10 @@
 						</select>
 						</td>
 						
-						
+						<td><p>부터</p></td>
+						<td class="demo">
+  					<input type="text" id="datepicker_2" name="meeting_day_end" size="13" readonly>
+						</td>
 						<td>
 						<select name="select_6">
 							<option value="오전0시0분">오전0시0분</option>
@@ -227,7 +243,7 @@
 				<p>모임 등록일 설정</p>
 				<tr>
 					<td class="demo">
-  					<input type="text" id="datepicker_2" name="sign_day_start" size="13" readonly>
+  					<input type="text" id="datepicker_3" name="sign_day_start" size="13" readonly>
 					</td>
 					
 					<td>
@@ -258,8 +274,9 @@
 							<option value="오후11시0분">오후11시0분</option>
 						</select>
 					</td>
+					<td><p>부터</p></td>
 					<td class="demo">
-  				<input type="text" id="datepicker_3" name="sign_day_end" size="13" readonly>
+  				<input type="text" id="datepicker_4" name="sign_day_end" size="13" readonly>
 					</td>
 					
 					<td>
