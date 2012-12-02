@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <%@ page import="com.oreilly.servlet.MultipartRequest"
    import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"
@@ -8,8 +8,8 @@
 %>
 <%@ page import="java.sql.*"%>
 <%
+ String id=(String)session.getAttribute("id");
  String thumbFileName = "";
- String photoplace="";
  String realFolder = "";
  String saveFolder = "image";
  String encType="euc-kr";
@@ -27,17 +27,9 @@
    String name = (String)files.nextElement(); // input type=file 인 파라미터 이름
    String filename = multi.getFilesystemName(name); // 서버에 저장된 파일이름
    String orgFileName = realFolder+"\\"+filename; //경로+ 원본 이미지 파일명
-   thumbFileName = realFolder+"\\small"+filename; //경로+ 썸네일 이미지파일명
+   thumbFileName = realFolder+"\\small"+id + ".jpg"; //경로+ 썸네일 이미지파일명
    Thumbnail.createImage(orgFileName,thumbFileName,zoom); // 썸네일 이미지생성
-   photoplace=thumbFileName;
-%>
-   원본 파일 저장 경로 및 파일명 : <%= orgFileName %>
-   <img src="<%= orgFileName %>" border="0" /><br /><br />
-   썸네일 이미지 저장 경로 및 파일명 : <%= thumbFileName %>
-   <img src="<%= thumbFileName %>" border="0" />
-   <img src="image/sm_<%=filename %>">
-<%
-  }
+ }
   
   
  }catch(IOException e){
@@ -47,18 +39,12 @@
  }
  
 	request.setCharacterEncoding("utf-8");
-	String id=request.getParameter("id");
-	String pass=request.getParameter("pwd");
-	String email=request.getParameter("email");
-	String name=request.getParameter("name");
-	String phone = request.getParameter("call1") + request.getParameter("call2") + request.getParameter("call3");
-	String mypage_url=request.getParameter("mypage_url");
+	
+	String photo=(String)thumbFileName;
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
-	
-	String photo=thumbFileName;
 	
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
@@ -74,15 +60,16 @@
 		String user_pwd="aldks12";		
 		conn = DriverManager.getConnection(url, user, user_pwd);
 
-		String sql = "SELECT * FROM user where id=?";
+		String sql = "SELECT * FROM user WHERE user_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
-		rs = pstmt.executeQuery();
-		String sql2 = "INSERT INTO user(photo) VALUES (?)";		//디비 insert
-
-		pstmt = conn.prepareStatement(sql2);
+		//rs = pstmt.executeQuery();
 		
-		pstmt.setString(1, photo);				
+		
+		String sql2 = "UPDATE user SET user.photo=? where user_id=?";		//디비 insert
+		pstmt = conn.prepareStatement(sql2);
+		pstmt.setString(1, photo);
+		pstmt.setString(2, id);
 		
 		pstmt.executeUpdate();
 
@@ -91,5 +78,6 @@ catch(Exception e){
 System.out.print(e);
 }
 %>
-%>
+
+
 

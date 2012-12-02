@@ -27,7 +27,7 @@
   		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
   		
 			conn=DriverManager.getConnection(url,user,user_pwd);
-			String sql="DELETE FROM user WHERE id=?";
+			String sql="DELETE FROM user WHERE user_id=?";
   		pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1,delete_id);
 			pstmt.executeUpdate();

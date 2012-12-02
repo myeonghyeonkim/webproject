@@ -3,10 +3,9 @@
 <%
 	String[][] menu = {
 		{"./myinfo_main.jsp", "마이페이지홈" },
-		{"./index.jsp", "회원정보수정" },
-		{"#", "비밀번호변경" },
+		{"./myinfo_edit.jsp", "회원정보수정" },
 		{"#", "모임참여내역" },
-		{"#", "회원탈퇴" },
+		{"./myinfo_delete.jsp", "회원탈퇴" },
 	};
   String currentMenu = request.getParameter("current");
 %>    

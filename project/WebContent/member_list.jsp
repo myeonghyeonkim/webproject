@@ -29,6 +29,8 @@
 			rs=pstmt.executeQuery();
 			
 			
+			
+			
 	}catch(Exception e){
 		e.printStackTrace();
 	}
@@ -40,16 +42,16 @@
 </head>
 <body>
 <center>
-<table border=1 width=300>
+<table border="1" width="300">
 	<tr align=center><td colspan=2>회원 목록</td></tr>
 	<%while(rs.next()){%>
 	<tr align=center>
 		<td>
-			<a href="member_info.jsp?id=<%=rs.getString("id") %>">
-				<%=rs.getString("id") %>
+			<a href="member_info.jsp?id=<%=rs.getString("user_id") %>">
+				<%=rs.getString("user_id") %>
 			</a>
 		</td>
-		<td><a href="member_delete.jsp?id=<%=rs.getString("id") %>">삭제</a></td>
+		<td><a href="member_delete.jsp?id=<%=rs.getString("user_id") %>">삭제</a></td>
 	</tr>
 	<%} %>
 </table>

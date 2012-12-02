@@ -25,7 +25,7 @@
   		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
   		
 			conn=DriverManager.getConnection(url,user,user_pwd);
-			String sql="SELECT * FROM user WHERE id=?";
+			String sql="SELECT * FROM user WHERE user_id=?";
   		pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1,info_id);
 			rs=pstmt.executeQuery();
@@ -42,8 +42,8 @@
 <center>
 
 
-<table border=1 width=300>
-	<tr align=center><td>아이디 : </td><td><%=rs.getString("id") %></td></tr>
+<table border="1" width="300">
+	<tr align=center><td>아이디 : </td><td><%=rs.getString("user_id") %></td></tr>
 	<tr align=center><td>비밀번호 : </td><td><%=rs.getString("pwd") %></td></tr>
 	<tr align=center><td>이름 : </td><td><%=rs.getString("name") %></td></tr>
 	<tr align=center><td>이메일 : </td><td><%=rs.getString("email") %></td></tr>

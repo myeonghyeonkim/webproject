@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.awt.Graphics2D" %>
 <%@ page import="java.awt.image.renderable.ParameterBlock" %>
 <%@ page import="java.awt.image.BufferedImage" %>
@@ -45,12 +45,12 @@
 %>
 <html>
 <head>
-<title>ÀÌ¹ÌÁö ½æ³×ÀÏ ¿¹Á¦</title>
+<title>ì´ë¯¸ì§€ ì¸ë„¤ì¼ ì˜ˆì œ</title>
 </head>
 <body>
--¿øº» ÀÌ¹ÌÁö-<br>
+-ì›ë³¸ ì´ë¯¸ì§€-<br>
 <img src="image/<%=filename %>"><p>
--½æ³×ÀÏ ÀÌ¹ÌÁö-<br>
+-ì¸ë„¤ì¼ ì´ë¯¸ì§€-<br>
 <img src="image/sm_<%=filename %>">
 </body>
 </html>

@@ -15,7 +15,8 @@
 	Connection conn=null;
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
-	String image_path = "사진등록안햇을경우 기본적으로 띄워줄 그림 파일 경로";
+	//String image_path = "사진등록안햇을경우 기본적으로 띄워줄 그림 파일 경로";
+	String image_path="";
 	try {
 		Class.forName("com.mysql.jdbc.Driver");//드라이버
 		String url="jdbc:mysql://localhost:3306/webpro";
@@ -23,10 +24,10 @@
 		String user_pwd="aldks12";
 		
   		//Context init = new InitialContext();
-  		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
+  		
   		
 			conn=DriverManager.getConnection(url,user,user_pwd);
-			String sql="SELECT * FROM user WHERE id=?";
+			String sql="SELECT * FROM user WHERE user_id=?";
   		pstmt=conn.prepareStatement(sql);
   		pstmt.setString(1,user_id);
   		
@@ -69,11 +70,11 @@
 	</jsp:include>
 	<div id="mypage_wrap">
 		<div id="mypage_photo1">
-			<%----<img src="<%=thumbFileName %>" />--%>
+		<img src="<%=image_path %>"/>
 		</div>
 		<div id="mypage_photo2">
-		<form action="thumbnailPro.jsp" method="post" enctype="multipart/form-data">
-		이미지 파일 : <input type="file" name="image"><p>
+		<form action="myinfo_photo.jsp" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" value="찾기"><p>
 		<input type="submit" value="전송">
 		</form>
 		  

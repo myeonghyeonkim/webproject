@@ -2,7 +2,7 @@
     pageEncoding="UTF-8" import="java.lang.*" %>
   
 <!DOCTYPE html>
-
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>STUDY-MEETING</title>
@@ -63,6 +63,15 @@
 							</h3>
 							<input type="button" class="logout" value="logout"
 							onclick="logOut()">
+							
+							<br/>
+							<br/>
+							
+					</div>
+					<div>
+								<form action ="meeting_create.jsp" method="post">
+								<a href="meeting_create.jsp">모임 개설하기</a>
+								</form>
 					</div>
 					<% 
 							
@@ -71,7 +80,7 @@
 					
 					<div id="login_before">
 					<form name="loginform" action="loginProcess.jsp" method="post">
-					<center>
+				
 						<table border="1">
 						<tr>
 						<td colspan="2" align=center>
@@ -79,8 +88,8 @@
 						</td>
 						</tr>
 				
-						<tr><td>아이디 : </td><td><input type="text" name="id"/></td></tr>
-						<tr><td>비밀번호 : </td><td><input type="password" name="pwd"/></td></tr>
+						<tr><td>아이디 : </td><td><input type="text" name="id" placeholder="아이디"/></td></tr>
+						<tr><td>비밀번호 : </td><td><input type="password" name="pwd" placeholder="비밀번호"/></td></tr>
 						<tr>
 						<td colspan="2" align=center>
 						<a href="javascript:loginform.submit()">로그인</a>&nbsp;&nbsp;
@@ -89,12 +98,12 @@
 						</tr>
 						<tr>
 						<td colspan="2" align=center>
-						<a href="meeting.jsp">모임 개설하기</a>
+						<a href="meeting_create.jsp">모임 개설하기</a>
 						</td>
 						
 						</tr>
 						</table>
-				</center>
+				
 				</form>
 				</div>
 				<%} %>
