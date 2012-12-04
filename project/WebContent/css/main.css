@@ -22,37 +22,3 @@ input,button,textarea,select{font-size:100%;}
 
 /*HTML*/
 
-#wrap{width:1000px; margin:0 auto; background-color:white;}
-#top{width:1000px; height:100px; background-color:gray;}
-#top_left{width:65%; height:100%; background-color:blue; float:left;}
-#top_right{width:25%; height:100%; float:right;}
-#body{width:1000px; height:700px; background-color:pink;}
-/* UL,LI Source
-#body ul li{
-display:block; float:left; width:48%; height:150px; margin:5px; background-color:yellow; overflow:auto;
-}
-*/
-#body_1{
-display:block; float:left; width:30%; height:400px; margin:30px 5px 5px 5px; background-color:yellow; overflow:auto;
-}
-#body_2{
-display:block; float:left; width:60%; height:400px; margin:30px 5px 5px 5px; background-color:yellow; overflow:auto;
-}
-#body_3{
-display:block; float:left; width:60%; height:150px; margin:5px; background-color:yellow; overflow:auto;
-}
-#body_4{
-display:block; float:left; width:36%; height:150px; margin:5px; background-color:yellow; overflow:auto;
-}
-#body_5{
-display:block; float:left; width:70%; height:150px; margin:5px; background-color:yellow; overflow:auto;
-}
-
-#bottom{width:1000px; height:120px; background-color:red;}
-
-#mypage_photo{
-display:block; float:left; width:35%; height:300px; margin:30px 5px 5px 5px; background-color:yellow; overflow:auto;
-}
-#mypage_main{
-display:block; float:left; width:35%; height:300px; margin:30px 5px 5px 5px; background-color:yellow; overflow:auto;
-}
