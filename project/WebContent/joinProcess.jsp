@@ -1,13 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.sql.*"%>
 
 <%
 	request.setCharacterEncoding("utf-8");
 	String id=request.getParameter("id");
 	String pass=request.getParameter("pwd");
+	String email=request.getParameter("email");
 	String name=request.getParameter("name");
 	String phone = request.getParameter("call1") + request.getParameter("call2") + request.getParameter("call3");
 	String mypage_url=request.getParameter("mypage_url");
+	String photo="http://localhost/images/2.jpg";
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;
@@ -20,7 +22,7 @@
 	}
 	catch(ClassNotFoundException e){
 		e.printStackTrace();
-		System.out.println("����̹� �ε� ����");
+		System.out.println("드라이버 로딩 실패");
 	}	
 	
 	try{
@@ -29,40 +31,40 @@
 		String user_pwd="aldks12";		
 		conn = DriverManager.getConnection(url, user, user_pwd);
 
-		String sql = "SELECT * FROM user where id=?";
+		String sql = "SELECT * FROM user where user_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
 
 		if(rs.next()){
-			message = request.getParameter("id") + "�� �̹� ������Դϴ�.";
+			message = request.getParameter("id") + "는 이미 사용중입니다.";
 %>
 
 <script type="text/javascript">
-	alert("�̹� ��� ���� ID�Դϴ�.");
+	alert("이미 사용 중인 ID입니다.");
 	history.back()
 </script>
 
 <%		
 		}
 		
-		String sql2 = "INSERT INTO user VALUES (?,?,?,?,?,?,?)";		//��� insert
+		String sql2 = "INSERT INTO user VALUES (?,?,?,?,?,?,?)";		//디비 insert
 
 		pstmt = conn.prepareStatement(sql2);
 		
 		pstmt.setString(1, id);				
 		pstmt.setString(2, pass);
 		pstmt.setString(3, name);
-		pstmt.setString(4, phone);
+		pstmt.setString(4, email);
 		pstmt.setString(5, phone);
-		pstmt.setString(6, phone);
-		pstmt.setString(7, mypage_url);
+		pstmt.setString(6, mypage_url);
+		pstmt.setString(7, photo);
 
 		pstmt.executeUpdate();
 %>
 
 <script language="javascript">
-	alert("ȸ�������� �Ϸ�Ǿ����ϴ�.");
+	alert("회원가입이 완료되었습니다.");
 	document.location="index.jsp";
 </script>
 <%

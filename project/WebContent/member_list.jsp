@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.sql.*"%>
 
 
@@ -19,7 +19,7 @@
 		String url="jdbc:mysql://localhost:3306/webpro";
 		String user="admin";
 		String user_pwd="aldks12";
-		Class.forName("com.mysql.jdbc.Driver");//µå¶óÀÌ¹ö
+		Class.forName("com.mysql.jdbc.Driver");//ë“œë¼ì´ë²„
   		//Context init = new InitialContext();
   		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
   		
@@ -29,6 +29,8 @@
 			rs=pstmt.executeQuery();
 			
 			
+			
+			
 	}catch(Exception e){
 		e.printStackTrace();
 	}
@@ -36,20 +38,20 @@
 %>
 <html>
 <head>
-<title>È¸¿ø°ü¸® ½Ã½ºÅÛ °ü¸®ÀÚ¸ðµå(È¸¿ø ¸ñ·Ï º¸±â)</title>
+<title>íšŒì›ê´€ë¦¬ ì‹œìŠ¤í…œ ê´€ë¦¬ìžëª¨ë“œ(íšŒì› ëª©ë¡ ë³´ê¸°)</title>
 </head>
 <body>
 <center>
-<table border=1 width=300>
-	<tr align=center><td colspan=2>È¸¿ø ¸ñ·Ï</td></tr>
+<table border="1" width="300">
+	<tr align=center><td colspan=2>íšŒì› ëª©ë¡</td></tr>
 	<%while(rs.next()){%>
 	<tr align=center>
 		<td>
-			<a href="member_info.jsp?id=<%=rs.getString("id") %>">
-				<%=rs.getString("id") %>
+			<a href="member_info.jsp?id=<%=rs.getString("user_id") %>">
+				<%=rs.getString("user_id") %>
 			</a>
 		</td>
-		<td><a href="member_delete.jsp?id=<%=rs.getString("id") %>">»èÁ¦</a></td>
+		<td><a href="member_delete.jsp?id=<%=rs.getString("user_id") %>">ì‚­ì œ</a></td>
 	</tr>
 	<%} %>
 </table>

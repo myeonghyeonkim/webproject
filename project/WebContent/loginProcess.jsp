@@ -1,48 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.sql.*"%>
 <%-- <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>--%>
 <%
+	request.setCharacterEncoding("utf-8");
 	String id=request.getParameter("id");
 	String pwd=request.getParameter("pwd");
 	
 	Connection conn=null; 
 	
-	//Statement stmt=null; Á÷Á¢sql¹®À» ¼öÇà½ÃÅ³¼ö ÀÖ´Ù.
+	//Statement stmt=null; ì§ì ‘sqlë¬¸ì„ ìˆ˜í–‰ì‹œí‚¬ìˆ˜ ìžˆë‹¤.
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
 	
 	
 	try {
-		//Class.forName("com.mysql.jdbc.Driver");//µå¶óÀÌ¹ö
+		//Class.forName("com.mysql.jdbc.Driver");//ë“œë¼ì´ë²„
 		String url="jdbc:mysql://localhost:3306/webpro";
 		String user="admin";
 		String user_pwd="aldks12";
-		Class.forName("com.mysql.jdbc.Driver");//µå¶óÀÌ¹ö
+		Class.forName("com.mysql.jdbc.Driver");//ë“œë¼ì´ë²„
   		//Context init = new InitialContext();
   		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
   		
 			conn=DriverManager.getConnection(url,user,user_pwd);
-			String sql="SELECT * FROM user WHERE id=?";
+			String sql="SELECT * FROM user WHERE user_id=?";
   		pstmt=conn.prepareStatement(sql);
   		pstmt.setString(1,id);
-  		rs=pstmt.executeQuery();//½ÇÁ¦ µ¥ÀÌÅÍ¸¦ ÃßÃâ.°á°úµ¥ÀÌÅÍ°¡ ´ã±ä´Ù.
+  		rs=pstmt.executeQuery();//ì‹¤ì œ ë°ì´í„°ë¥¼ ì¶”ì¶œ.ê²°ê³¼ë°ì´í„°ê°€ ë‹´ê¸´ë‹¤.
   		
   		
   		if(rs.next()){
   			if(pwd.equals(rs.getString("pwd"))){
   				session.setAttribute("id",id);
   				out.println("<script>");
-  		  	out.println("location.href='main.jsp'");
+  		  	out.println("location.href='index.jsp'");
   		  	out.println("</script>");
   			}
   		}
   		
   		out.println("<script>");
-  		out.println("location.href='loginForm.jsp'");
+  		out.println("location.href='index.jsp'");
   		out.println("</script>");
 	}catch(Exception e){
 		e.printStackTrace();
-		System.out.println("µå¶óÀÌ¹ö ·Îµî½ÇÆÐ");
+		System.out.println("ë“œë¼ì´ë²„ ë¡œë“±ì‹¤íŒ¨");
  	}
 %>

@@ -12,7 +12,9 @@
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script language="javascript">
+
+<script language="javascript">
+
 	function logOut() {
 		document.location = "logout.jsp";
 	}
@@ -41,6 +43,7 @@
 				<br/>
 				<p><a href="myinfo_main.jsp">내정보관리</a></p>
 				<p>QNA</p>
+
 			</div>
 		</div>
 		
@@ -112,6 +115,7 @@
 				</form>
 				</div>
 				<%} %>
+
 				</div>
 				</div>
 				
@@ -119,6 +123,7 @@
 				<div id="body3_sub1">
 					
 				</div>
+
 				<div id="body3_sub2">
 					<div id="body3_sub2_1">
 					</div>

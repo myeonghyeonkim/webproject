@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.sql.*"%>
 
 <%
@@ -20,12 +20,12 @@
 		String url="jdbc:mysql://localhost:3306/webpro";
 		String user="admin";
 		String user_pwd="aldks12";
-		Class.forName("com.mysql.jdbc.Driver");//µå¶óÀÌ¹ö
+		Class.forName("com.mysql.jdbc.Driver");//ë“œë¼ì´ë²„
   		//Context init = new InitialContext();
   		//DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
   		
 			conn=DriverManager.getConnection(url,user,user_pwd);
-			String sql="SELECT * FROM user WHERE id=?";
+			String sql="SELECT * FROM user WHERE user_id=?";
   		pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1,info_id);
 			rs=pstmt.executeQuery();
@@ -36,22 +36,23 @@
 %>
 <html>
 <head>
-<title>È¸¿ø°ü¸® ½Ã½ºÅÛ °ü¸®ÀÚ¸ðµå(È¸¿ø Á¤º¸ º¸±â)</title>
+<title>íšŒì›ê´€ë¦¬ ì‹œìŠ¤í…œ ê´€ë¦¬ìžëª¨ë“œ(íšŒì› ì •ë³´ ë³´ê¸°)</title>
 </head>
 <body>
 <center>
 
 
-<table border=1 width=300>
-	<tr align=center><td>¾ÆÀÌµð : </td><td><%=rs.getString("id") %></td></tr>
-	<tr align=center><td>ºñ¹Ð¹øÈ£ : </td><td><%=rs.getString("pwd") %></td></tr>
-	<tr align=center><td>ÀÌ¸§ : </td><td><%=rs.getString("name") %></td></tr>
-	<tr align=center><td>ÇÚµåÆù ¹øÈ£ : </td><td><%=rs.getString("call1") %></td></tr>
+<table border="1" width="300">
+	<tr align=center><td>ì•„ì´ë”” : </td><td><%=rs.getString("user_id") %></td></tr>
+	<tr align=center><td>ë¹„ë°€ë²ˆí˜¸ : </td><td><%=rs.getString("pwd") %></td></tr>
+	<tr align=center><td>ì´ë¦„ : </td><td><%=rs.getString("name") %></td></tr>
+	<tr align=center><td>ì´ë©”ì¼ : </td><td><%=rs.getString("email") %></td></tr>
+	<tr align=center><td>í•¸ë“œí° ë²ˆí˜¸ : </td><td><%=rs.getString("call1") %></td></tr>
 	
-	<tr align=center><td>¸¶ÀÌÆäÀÌÁöurl : </td><td><%=rs.getString("mypage_url") %></td></tr>
+	<tr align=center><td>ë§ˆì´íŽ˜ì´ì§€url : </td><td><%=rs.getString("mypage_url") %></td></tr>
 	
 	<tr align=center>
-		<td colspan=2><a href="member_list.jsp">¸®½ºÆ®·Î µ¹¾Æ°¡±â</a></td>
+		<td colspan=2><a href="member_list.jsp">ë¦¬ìŠ¤íŠ¸ë¡œ ëŒì•„ê°€ê¸°</a></td>
 	</tr>
 </table>
 </center>

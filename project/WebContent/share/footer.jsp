@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <footer class="footer">
   <div class="container" style="border-top:1px solid #DDD; padding:10px 0;margin-top:20px;">
-    &copy; Web Programming 2012, Dongseop Kwon
+    &copy; 명지대학교 컴퓨터공학과ze
   </div>
 </footer>
 
