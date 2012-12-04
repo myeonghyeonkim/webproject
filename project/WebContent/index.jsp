@@ -12,7 +12,7 @@
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-<script language="javascript">
+	<script language="javascript">
 	function logOut() {
 		document.location = "logout.jsp";
 	}
