@@ -30,7 +30,7 @@
 		<div id="top">
 			<div id="top_left">
 			<h1>우리들의 스터디공간</h1>
-			<h1>S T U D Y - M E E T I N G</h1>
+			<h1>S T U D Y - M E E T I N G test</h1>
 			</div>
 			<div id="top_right"> 
 
