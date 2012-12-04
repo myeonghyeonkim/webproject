@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.lang.*" %>
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +9,21 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/base.css" rel="stylesheet">
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+<script language="javascript">
+	function logOut() {
+		document.location = "logout.jsp";
+	}
+
+	function findIdPw() {
+		document.location = "find_id.jsp";
+	}
+</script>
 </head>
 <body>
+
 	<div id="wrap">
 		<div id="top">
 			<div id="top_left">
@@ -17,83 +31,117 @@
 			<h1>S T U D Y - M E E T I N G</h1>
 			</div>
 			<div id="top_right"> 
+
 			</div>
-			<div id="top_bottom">
-			<ul class="nav nav-tabs">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">마이페이지</a></li>
-				</ul>
+			
+			
+
+				<br/>
+				<br/>
+				<br/>
+				<p><a href="myinfo_main.jsp">내정보관리</a></p>
+				<p>QNA</p>
 			</div>
 		</div>
 		
 		<div id="body">
-			<div class="body_1">
-				<img src="C:\Users\0\Desktop\연필_S~1.JPG">
-			</div>
-			<div class="body_2">
-				<h1> 로그인</h1>
-				<form name="loginform" action="loginProcess.jsp" method="post">
-					<form class="form-horizontal">
-  						<div class="control-group">
-    						<label class="control-label" for="inputEmail">Email</label>
-    						<div class="controls">
-     	 						<input type="text" id="inputEmail" placeholder="Email">
-     	 						
-    						</div>
-  						</div>
-  						<div class="control-group">
-    						<label class="control-label" for="inputPassword">Password</label>
-    						<div class="controls">
-      							<input type="password" id="inputPassword" placeholder="Password">
-    						</div>
-  						</div>
-  						<div class="control-group">
-    						<div class="controls">
-     							 <label class="checkbox">
-        							<input type="checkbox"> Remember me
-        							<button type="submit" class="btn btn-large">로그인</button>
-        							<button type="submit" class="btn btn-large">회원가입</button>
-      							</label>
-    						</div>
-  						</div>
-					</form>
-					<a href="javascript:loginform.submit()">로그인</a>&nbsp;&nbsp;	
-					<a href="joinForm.jsp">회원가입</a>	
-						<br/>
+			<div id="body_1"></div>
+			<div id="body_2">
+				 <div id="login_state">
+					<% 
+						if(session.getAttribute("id") != null && ((String)session.getAttribute("id")).equals("admin")) {
+					%>
+					<div id="login_admin">
+						<h3><%=session.getAttribute("id")%> 로 로그인하셨습니다.</h3>
+						<a href="member_list.jsp">관리자모드 접속(회원 목록 보기)</a>
+						<input type="button" class="logout" value="logout"
+							onclick="logOut()">
+					</div> 
+					
+					<% }
+						else if (session.getAttribute("id") != null) {
+					%>
+					<div id="login_after">
+							
+							<h3><%=session.getAttribute("id")%>
+							님 로그인.
+							</h3>
+							<input type="button" class="logout" value="logout"
+							onclick="logOut()">
+							
+							<br/>
+							<br/>
+							
+					</div>
+					<div>
+								<form action ="meeting_create.jsp" method="post">
+								<a href="meeting_create.jsp">모임 개설하기</a>
+								</form>
+					</div>
+					<% 
+							
+						} else {
+					%>
+					
+					<div id="login_before">
+					<form name="loginform" action="loginProcess.jsp" method="post">
+				
+						<table border="1">
+						<tr>
+						<td colspan="2" align=center>
+						<b><font size=5>로그인 페이지</font></b>
+						</td>
+						</tr>
+				
+						<tr><td>아이디 : </td><td><input type="text" name="id" placeholder="아이디"/></td></tr>
+						<tr><td>비밀번호 : </td><td><input type="password" name="pwd" placeholder="비밀번호"/></td></tr>
+						<tr>
+						<td colspan="2" align=center>
+						<a href="javascript:loginform.submit()">로그인</a>&nbsp;&nbsp;
+						<a href="joinForm.jsp">회원가입</a>
+						</td>
+						</tr>
+						<tr>
+						<td colspan="2" align=center>
+						<a href="meeting_create.jsp">모임 개설하기</a>
+						</td>
+						
+						</tr>
+						</table>
+				
 				</form>
-				<button class="btn btn-large btn-block" type="button">모임 개설하기</button>
-			</div>
-			
-			<!-- body3 -->
-			
-			<div class="body_3">
-			   <!-- Select Multiple -->
-          <label class="control-label"></label>
-          <h1>Category</h1>
-          	
-
-			</div>
-			<div class="body_4">
-			<h1>공지사항</h1>
-			<div id="boardBox">
-				<h3 class="tab01"><a href="#noticeList"></a></h3>
-				<div id="noticeList">
-					<ul>
-						<li><a href="#">asdfasdfasdfasdfasdfadsfaadsfasf</a></li>
-						<li><a href="#">asdfasdfasdfasdfasdfadsfaadsfasf</a></li>
-						<li><a href="#">asdfasdfasdfasdfasdfadsfaadsfasf</a></li>
-						<li><a href="#">asdfasdfasdfasdfasdfadsfaadsfasf</a></li>
-						<li><a href="#">asdfasdfasdfasdfasdfadsfaadsfasf</a></li>
-					</ul>
-					<p class="more"><a href="#">더보기</a></p>
+				</div>
+				<%} %>
+				</div>
+				</div>
+				
+			<div id="body_3">
+				<div id="body3_sub1">
+					
+				</div>
+				<div id="body3_sub2">
+					<div id="body3_sub2_1">
+					</div>
+					<div id="body3_sub2_2">
+					</div>
+				</div>
+			</div>	
+			<div id="body_4"></div>
+			<div id="body_5">
+				<div id="body5_sub1">
+				</div>
+				<div id="body5_sub2">
+					<div id="body5_sub2_1">
+					</div>
+					<div id="body5_sub2_2">
+					</div>
+					<div id="body5_sub2_3">
+					</div>
+										
 				</div>
 			</div>
-			</div>
 			
-			<div class="body_5">
-			<h1>모임정보</h1>
-			</div>
-		
+
 		</div>
 		<div id="bottom">
 			<h1>COPY RIGHT</h1>
