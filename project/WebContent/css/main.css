@@ -2,7 +2,7 @@
 html{color:#000;
 	background:#888; 
 	padding:20px 0;
-	font: 12px/18px "¸¼Àº °íµñ", "Malgun Gothic", "±¼¸²", "Gulim", Verdana, Arial, Tahoma;
+	font: 12px/18px "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½", "Malgun Gothic", "ï¿½ï¿½ï¿½ï¿½", "Gulim", Verdana, Arial, Tahoma;
 }
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -22,33 +22,40 @@ input,button,textarea,select{font-size:100%;}
 
 /*HTML*/
 
-#wrap{width:700px; margin:0 auto; background-color:white;}
-#top{width:700px; height:100px; background-color:gray;}
-#top_left{width:65%; height:100%; background-color:blue; float:left;}
-#top_right{width:25%; height:100%; float:right;}
-#body{width:700px; height:500px; background-color:pink;}
+#wrap{width:1000px; margin:0 auto; background-color:white;}
+#top{width:1000px; height:120px; background-color:gray;}
+#top_left{width:60%; height:100%; background-color:gray; float:left;}
+#top_right{width:100%; height:70%;}
+#top_bottom{float:center;}
+
+#body{width:1000px; height:800px; background-color:#CCC;}
 /* UL,LI Source
 #body ul li{
 display:block; float:left; width:48%; height:150px; margin:5px; background-color:yellow; overflow:auto;
 }
 */
-#body_1{
-display:block; float:left; width:60%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+.body_1,.body_2,.body_3,.body_4,.body_5{
+	border: 1px solid #d7e9f9;
+	-moz-border-radius: 5px;
+	border-radius: 5px;}	
+#body h1{ background: #d7e9f9 no-repeat 4px center;}
+.body_1{
+display:block; float:left; width:60%; height:200px; margin:30px 5px 5px 5px; background-color:#FFF; overflow:auto;}
+.body_2{
+display:block; float:left; width:36%; height:300px; margin:30px 5px 5px 5px; background-color:#FFF;overflow:auto;
 }
-#body_2{
-display:block; float:left; width:36%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+a:active{}
+.body_3{
+display:block; float:left; width:60%; height:200px; margin:5px; background-color:#FFF; overflow:auto;
 }
-#body_3{
-display:block; float:left; width:60%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+.body_4{
+display:block; float:left; width:36%; height:200px; margin:5px; background-color:#FFF; overflow:auto;
 }
-#body_4{
-display:block; float:left; width:36%; height:150px; margin:5px; background-color:yellow; overflow:auto;
-}
-#body_5{
-display:block; float:left; width:70%; height:150px; margin:5px; background-color:yellow; overflow:auto;
+.body_5{
+display:block; float:left; width:50%; height:280px; margin:5px; background-color:#FFF; overflow:auto;
 }
 
-#bottom{width:700px; height:120px; background-color:red;}
+#bottom{width:1000px; height:120px; background-color:#FFF;}
 
 
 
