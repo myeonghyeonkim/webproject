@@ -10,6 +10,7 @@
 	
 	<script type="text/javascript" src="js/jquery-1.4.1.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<Script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=e10dd44811c9f30d47b26b2eabb7989c272c20f5"></script>
 	<link type="text/css" href="css/demos.css" rel="stylesheet" />
 	<link type="text/css" href="css/ui.all.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery-1.3.2.js"></script>

@@ -1,0 +1,47 @@
+/* Reset CSS: from YUI2: Reset CSS */
+html{color:#000;
+	background:#888; 
+	padding:20px 0;
+	font: 12px/18px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdana, Arial, Tahoma;
+
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{font-size:100%;}
+
+/*HTML*/
+
+#mypage_wrap{width:1000px; height: 500px; margin:0 auto; background-color:white;}
+.footer{width:1200px;}
+#body{width:1000px; height:800px; background-color:#CCC;}
+#bottom{width:1000px; height:120px; background-color:#FFF;}
+.hero-unit{height: 300px;
+	border: 2px solid #d7e9f9;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.mypage_photo1{
+display:block; float:left; width:35%; height:200px; background-color:#3E94D1; overflow:auto;
+	border: 2px solid #d7e9f9;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.mypage_main{
+display:block; float:left; width:50%; height:200px; margin:0 0 0 10px; background-color:#FFF; overflow:auto;
+	border: 2px solid #d7e9f9;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}

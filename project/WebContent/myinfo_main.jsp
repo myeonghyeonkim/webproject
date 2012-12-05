@@ -57,7 +57,7 @@
 </script>--%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/myinfo_main.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/base.css" rel="stylesheet">
 	<script src="js/jquery-1.8.2.min.js"></script>
@@ -69,22 +69,22 @@
   <jsp:param name="current" value="Sign Up"/>
 	</jsp:include>
 	<div id="mypage_wrap">
-		<div id="mypage_photo1">
-		<img src="<%=image_path %>"/>
+		<div class="hero-unit">
+		<h2>마이페이지</h2>
+		<div class="mypage_photo1">
+		<img src="<%=image_path %>" class="imgpolaroid"/>
+			<form action="myinfo_photo.jsp" method="post" enctype="multipart/form-data">
+				<input type="file" name="image" value="찾기"><p>
+				<input type="submit" class="btn btn-primary btn-large" value="전송">
+			</form>
 		</div>
-		<div id="mypage_photo2">
-		<form action="myinfo_photo.jsp" method="post" enctype="multipart/form-data">
-		<input type="file" name="image" value="찾기"><p>
-		<input type="submit" value="전송">
-		</form>
-		  
+		<div class="mypage_main">
+			<ul>
+				<li><div class="label"><span>이름 </span></div><%=rs.getString("name") %></li>
+				<li><div class="label"><span>핸드폰 번호</span></div><%=rs.getString("phone") %></li>
+				<li><div class="label"><span>이메일</span></div><%=rs.getString("email") %></li>
+			</ul>	
 		</div>
-		<div id="mypage_main">
-			
-			<h3>	이름 : <%=rs.getString("name") %><br/></h3>
-			<h3>	핸드폰 번호 : <%=rs.getString("phone") %><br/></h3>
-			<h3>	이메일 : <%=rs.getString("email") %><br/></h3>
-				
 		</div>
 	</div>
 	<jsp:include page="share/footer.jsp">
