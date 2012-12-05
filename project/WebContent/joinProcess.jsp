@@ -9,6 +9,7 @@
 	String name=request.getParameter("name");
 	String phone = request.getParameter("call1") + request.getParameter("call2") + request.getParameter("call3");
 	String mypage_url=request.getParameter("mypage_url");
+	String photo="http://localhost/images/2.jpg";
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;
@@ -30,7 +31,7 @@
 		String user_pwd="aldks12";		
 		conn = DriverManager.getConnection(url, user, user_pwd);
 
-		String sql = "SELECT * FROM user where id=?";
+		String sql = "SELECT * FROM user where user_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
@@ -47,7 +48,7 @@
 <%		
 		}
 		
-		String sql2 = "INSERT INTO user VALUES (?,?,?,?,?,?,?,?)";		//디비 insert
+		String sql2 = "INSERT INTO user(user_id,pwd,name,email,phone,mypage_url,photo) VALUES (?,?,?,?,?,?,?)";		//디비 insert
 
 		pstmt = conn.prepareStatement(sql2);
 		
@@ -57,9 +58,9 @@
 		pstmt.setString(4, email);
 		
 		pstmt.setString(5, phone);
-		pstmt.setString(6, phone);
-		pstmt.setString(7, phone);
-		pstmt.setString(8, mypage_url);
+
+		pstmt.setString(6, mypage_url);
+		pstmt.setString(7, photo);
 
 		pstmt.executeUpdate();
 %>

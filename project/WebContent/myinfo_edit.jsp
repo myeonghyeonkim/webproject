@@ -12,7 +12,7 @@
 	String password = "";
 	String phone = "";
 	String email = "";
-
+	String photo =
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;		
