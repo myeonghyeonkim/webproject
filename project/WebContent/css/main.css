@@ -40,10 +40,10 @@ display:block; float:left; width:48%; height:150px; margin:5px; background-color
 	border-radius: 5px;
 }
 .body_1{
-display:block; float:left; width:60%; height:200px; margin:30px 5px 5px 5px; background-color:#FFF; overflow:auto;
+display:block; float:left; width:60%; height:230px; margin:30px 5px 5px 5px; background-color:#FFF; overflow:auto;
 }
 .body_2{
-display:block; float:left; width:36%; height:200px; margin:30px 5px 5px 5px; background-color:#FFF; overflow:auto;
+display:block; float:left; width:36%; height:230px; margin:30px 5px 5px 5px; background-color:#FFF; overflow:auto;
 }
 .body_3{
 display:block; float:left; width:60%; height:200px; margin:5px; background-color:#FFF; overflow:auto;
