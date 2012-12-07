@@ -8,6 +8,7 @@
 	String user_id=(String)session.getAttribute("id");
 	//int n=LAST_INSERT_ID();
 	String meeting_name=request.getParameter("meeting_name");
+	System.out.println(meeting_name);
 	
 	//int studygroup_id=1;
 	String meeting_subject=""; //모임 제목
@@ -77,7 +78,7 @@
 					<p>총 모집인원 : <%=rs.getString("part_person") %> 명 / 현재 참여자 : 명</p>
 					<a href="partperson_plus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">참여하기</a>
 					<a href="partperson_minus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">참여취소</a>
-						 
+					
 				</div>
 				<div id="meeting_info_right">
 				  <p>지도가 들어갈 부분</p>
@@ -120,7 +121,7 @@
 			<p>이메일  : <%=rs.getString("email") %></p>
 		</div>
 		<hr/>
-		<%rs.close(); %>
+		
 <%}%>
 <%--<%
 	try{
@@ -156,7 +157,7 @@
 <%
 try{
 			String sql3 = "select * from user,comment,studygroup where comment.meeting_name = studygroup.meeting_name"
-					+"and user.user_id = comment.user_id and studygroup.meeting_name=?";
+					+" and user.user_id = comment.user_id and studygroup.meeting_name=?";
 			pstmt = conn.prepareStatement(sql3);	
 			pstmt.setString(1,meeting_name);
 			rs = pstmt.executeQuery();
@@ -166,7 +167,7 @@ try{
 		}
 %>
 		<div id="meeting_comment_ok">
-	<% if(rs.next()) {%>
+	<% while(rs.next()) {%>
 				<p>댓글정보</p><br/>
 				<p><img src="<%=rs.getString("photo") %>"></p>
 				<p><%=rs.getString("user_content") %></p>

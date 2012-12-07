@@ -32,7 +32,7 @@
  			pstmt.setString(3,meeting_name);
  		
  			pstmt.executeUpdate();
- 			response.sendRedirect("meeting_page.jsp");
+ 			response.sendRedirect("meeting_page.jsp?meeting_name=" + meeting_name);
 
 		}
 		catch(Exception e){

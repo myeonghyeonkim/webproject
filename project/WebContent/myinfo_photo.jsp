@@ -13,6 +13,9 @@
  String realFolder = "";
  String saveFolder = "image";
  String encType="euc-kr";
+ 
+ String photo="";
+ 
  int maxSize = 5*1024*1024;
  ServletContext context = getServletContext();
  realFolder = context.getRealPath(saveFolder);
@@ -28,6 +31,12 @@
    String filename = multi.getFilesystemName(name); // 서버에 저장된 파일이름
    String orgFileName = realFolder+"\\"+filename; //경로+ 원본 이미지 파일명
    thumbFileName = realFolder+"\\small"+id + ".jpg"; //경로+ 썸네일 이미지파일명
+
+   photo = "image\\small" + id + ".jpg";
+   
+	  System.out.println("name = " + name);
+	  System.out.println("filename = " + filename);
+	  System.out.println("orgFileName = " + orgFileName);
    Thumbnail.createImage(orgFileName,thumbFileName,zoom); // 썸네일 이미지생성
  }
   
@@ -40,7 +49,7 @@
  
 	request.setCharacterEncoding("utf-8");
 	
-	String photo=(String)thumbFileName;
+	//String photo=(String)thumbFileName;
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;
