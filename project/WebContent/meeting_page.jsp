@@ -91,6 +91,7 @@
 				<div id="meeting_info_right">
 				</div>
 			</div>--%>
+		<div id="meeting_king_info">
 			<div id="meeting_explain">
 			<p>모임세부설명 : <%=rs.getString("meeting_explain") %>  </p>
 			</div>
@@ -175,6 +176,7 @@ try{
 	
 		
 		<hr/>	
+	</div>
 	</div>
 </body>
 </html>
