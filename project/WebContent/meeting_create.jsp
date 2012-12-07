@@ -76,9 +76,7 @@
 </head>
 <body>
 	<div id="meeting">
-		<jsp:include page="share/myinfo_header.jsp">
-  <jsp:param name="current" value="Sign Up"/>
-	</jsp:include>
+
 		<div class="hero-unit">
 			<form action ="meeting_create_ok.jsp" method="post">
 			<div class="hero-unit_1">
@@ -94,12 +92,12 @@
 						<th>요일별</th>
 					</tr>
 					<tr>
-						<td>
+					<td>
 						<select name="select_1">
 							<option value="computer">컴퓨터</option>
 							<option value="english">영어</option>
 						</select>
-						</td>
+					</td>
 						<td>
 						<select name="select_2">
 							<option value="talking">영어</option>

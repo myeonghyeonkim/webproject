@@ -5,6 +5,7 @@
 	request.setCharacterEncoding("utf-8");
 
 	String drop_id = (String)session.getAttribute("id");
+	String user_id=request.getParameter("user_id");
 			
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -28,25 +29,27 @@
 
 		String sql="DELETE FROM user WHERE user_id=?";
 		pstmt=conn.prepareStatement(sql);
-		pstmt.setString(1,drop_id);
+		pstmt.setString(1,user_id);
 		pstmt.executeUpdate();
 
-		}
-	catch(Exception e){
-		e.printStackTrace();
-	}finally{
-		if(rs != null){
-			rs.close();
-		}
-		if(pstmt != null){
-			pstmt.close();
-		}		
-		conn.close();
-	}
+
+%>
+<script language="javascript">
+	alert("회원탈퇴 되셨습니다.");
+	document.location="index.jsp";
+</script>
+
+<% 
+}
+catch(Exception e){
+	e.printStackTrace();
+}finally{
+	if(rs!=null) try{rs.close();} catch(Exception e){}
+	if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
+	if(conn!=null) try{conn.close();} catch(Exception e){}
+}
 %>
 <%
 	session.invalidate();
 %>
-<script>
-window.opener.location="index.jsp";
-</script>
+

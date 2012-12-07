@@ -72,12 +72,21 @@
 		pstmt.setString(2, id);
 		
 		pstmt.executeUpdate();
+		
 
-}
-catch(Exception e){
-System.out.print(e);
+	response.sendRedirect("myinfo_main.jsp");
+%>
+<%
+}catch(Exception e){
+	e.printStackTrace();
+}finally{
+	if(rs!=null) try{rs.close();} catch(Exception e){}
+	if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
+	if(conn!=null) try{conn.close();} catch(Exception e){}
 }
 %>
+
+
 
 
 

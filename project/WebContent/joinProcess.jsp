@@ -9,7 +9,7 @@
 	String name=request.getParameter("name");
 	String phone = request.getParameter("call1") + request.getParameter("call2") + request.getParameter("call3");
 	String mypage_url=request.getParameter("mypage_url");
-	String photo="http://localhost/images/2.jpg";
+	String photo="http://localhost:8080/project/image/2.jpg";
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;
@@ -49,6 +49,7 @@
 		}
 		
 		String sql2 = "INSERT INTO user(user_id,pwd,name,email,phone,mypage_url,photo) VALUES (?,?,?,?,?,?,?)";		//µðºñ insert
+		
 
 		pstmt = conn.prepareStatement(sql2);
 		

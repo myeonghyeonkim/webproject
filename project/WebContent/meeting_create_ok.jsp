@@ -4,6 +4,7 @@
 <%
 	request.setCharacterEncoding("utf-8");
   //스터디그룹아이디
+  String meeting_name =request.getParameter("meeting_name");
 	String user_id=(String)session.getAttribute("id");
   //int studygroup_id=1;
 	String meeting_subject=request.getParameter("subject");
@@ -21,7 +22,7 @@
 	String sign_day_end = request.getParameter("sign_day_end");
 	String group_image =request.getParameter("group_image");
 	String meeting_explain =request.getParameter("intro");
-	String meeting_name =request.getParameter("meeting_name");
+	
 	int part_person =Integer.parseInt(request.getParameter("limit_user_num"));
 	String meeting_place =request.getParameter("input_place");
 	String meeting_map = request.getParameter("map");
@@ -31,6 +32,7 @@
 	ResultSet rs=null;
 	
 	String message = "";
+	String studygroup_n="";
 	
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
@@ -54,9 +56,7 @@
 				",sign_time_start,sign_time_end,meeting_day_start,sign_day_start,sign_day_end,group_image,meeting_explain,meeting_name"+
 		",part_person,meeting_place,meeting_map,user_id,meeting_subject,meeting_day_end) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";		//디비 insert
 
-		pstmt = conn.prepareStatement(sql2);
-		
-		//pstmt.setInt(1, studygroup_id);				
+		pstmt = conn.prepareStatement(sql2);				
 		pstmt.setString(1, category_1);
 		pstmt.setString(2, category_2);
 		pstmt.setString(3, category_3);
@@ -80,19 +80,35 @@
 		pstmt.setString(20, meeting_day_end);
 	
 		pstmt.executeUpdate();
-%>
-
-<script language="javascript">
-	alert("모임개설이 완료되었습니다.");
-	document.location="meeting_page.jsp";
-</script>
-<%
-		}
+	}
 	catch(Exception e){
 		e.printStackTrace();
 	}finally{
 		if(rs!=null) try{rs.close();} catch(Exception e){}
 		if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
-		if(conn!=null) try{conn.close();} catch(Exception e){}
+		
 	}
+		
+		String sql3="select * from studygroup where meeting_name=?";
+	  pstmt = conn.prepareStatement(sql3);
+	  pstmt.setString(1,meeting_name);
+	  rs= pstmt.executeQuery();
+	 	
 %>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<p>
+ 		<% if(rs.next())
+		 {%>	  
+		<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+		개설된페이지로가기</a>
+		<%} %>
+	</div>
+</body>
+</html>
+
+		
