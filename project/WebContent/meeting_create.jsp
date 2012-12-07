@@ -77,6 +77,7 @@
 <body>
 	<div id="meeting">
 		<form action ="meeting_create_ok.jsp" method="post">
+		
 		<div id="meeting_1">
 			<table border="1">
 				<tr>

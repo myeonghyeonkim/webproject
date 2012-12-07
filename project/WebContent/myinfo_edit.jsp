@@ -12,7 +12,6 @@
 	String password = "";
 	String phone = "";
 	String email = "";
-	String photo =
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;		
@@ -41,7 +40,7 @@
 			id = rs.getString("user_id");
 			name = rs.getString("name");
 			password = rs.getString("pwd");
-			phone = rs.getString("call1");
+			phone = rs.getString("phone");
 			email = rs.getString("email");
 		}
 %>    
@@ -107,7 +106,7 @@
 
 		<% if(session.getAttribute("id") !=null) { %>
 		
-		<form id="myinfo_password_check" method="post" action="myinfo_modify.jsp">
+		<form id="myinfo_password_check" method="post" action="myinfo_edit_ok.jsp">
 			<table border="0" width="600" align="center">
 				<tr>
 					<td width="200" align="center">id : </td>
@@ -126,7 +125,7 @@
 
 				<tr>
 					<td width="200" align="center">핸드폰 번호  : </td>
-					<td>&nbsp;&nbsp;<font face="맑은 고딕"><input type="text" name="mobile" value="<%=phone%>" onclick='value=""'></font></td>
+					<td>&nbsp;&nbsp;<font face="맑은 고딕"><input type="text" name="phone" value="<%=phone%>" onclick='value=""'></font></td>
 				</tr>
 
 				<tr>
@@ -137,7 +136,7 @@
 		</table><p>
 
 		<div align="center">
-			<input type="button" value="수정" onclick="check()"> 
+			<input type="button" value="수정" onclick="check()">
 		</div>
 		</form>
 
@@ -150,16 +149,11 @@
 	</html>
 
 <%
-	}
-	catch(Exception e){
-		e.printStackTrace();
-	}finally{
-		if(rs != null){
-			rs.close();
-		}
-		if(pstmt != null){
-			pstmt.close();
-		}		
-		conn.close();
-	}
-%>	
+}catch(Exception e){
+	e.printStackTrace();
+}finally{
+	if(rs!=null) try{rs.close();} catch(Exception e){}
+	if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
+	if(conn!=null) try{conn.close();} catch(Exception e){}
+}
+%>

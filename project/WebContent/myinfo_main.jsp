@@ -23,7 +23,7 @@
 		String user="admin";
 		String user_pwd="aldks12";
 		
-  		//Context init = new InitialContext();
+  		
   		
   		
 			conn=DriverManager.getConnection(url,user,user_pwd);
@@ -37,24 +37,14 @@
 			}
 			
 			
-	}catch(Exception e){
-		e.printStackTrace();
-	}
-
+	
+	
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<%-- <script language="javascript">
-	function logOut() {
-		document.location = "logout.jsp";
-	}
 
-	function find_id() {
-		document.location = "find_id.jsp";
-	}
-</script>--%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<link href="css/myinfo_main.css" rel="stylesheet" type="text/css">
@@ -71,13 +61,15 @@
 	<div id="mypage_wrap">
 		<div class="hero-unit">
 		<h2>마이페이지</h2>
-		<div class="mypage_photo1">
-		<img src="<%=image_path %>" class="imgpolaroid"/>
+
+	 <div class="mypage_photo1">
+			<img src="<%=image_path %>" class="imgpolaroid"/>
 			<form action="myinfo_photo.jsp" method="post" enctype="multipart/form-data">
 				<input type="file" name="image" value="찾기"><p>
 				<input type="submit" class="btn btn-primary btn-large" value="전송">
 			</form>
 		</div>
+
 		<div class="mypage_main">
 			<ul>
 				<li><div class="label"><span>이름 </span></div><%=rs.getString("name") %></li>
@@ -93,3 +85,12 @@
 </body>
 
 </html>
+<%
+}catch(Exception e){
+	e.printStackTrace();
+}finally{
+	if(rs!=null) try{rs.close();} catch(Exception e){}
+	if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
+	if(conn!=null) try{conn.close();} catch(Exception e){}
+}
+%>

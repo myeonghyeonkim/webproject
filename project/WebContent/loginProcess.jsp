@@ -45,5 +45,9 @@
 	}catch(Exception e){
 		e.printStackTrace();
 		System.out.println("드라이버 로등실패");
- 	}
+ 	}finally{
+		if(rs!=null) try{rs.close();} catch(Exception e){}
+		if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
+		if(conn!=null) try{conn.close();} catch(Exception e){}
+	}
 %>
