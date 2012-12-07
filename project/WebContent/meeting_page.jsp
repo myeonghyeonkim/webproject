@@ -51,12 +51,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery-1.4.1.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	
+	<link type="text/css" href="css/meeting_create.css" rel="stylesheet" />
+	<link type="text/css" href="css/ui.all.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="js/ui.core.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker-ko.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="meeting_page">
-		<div id="meeting_info">
-			<div id="meeting_info_before">
+	<div id="meeting">
+		<div class="hero-unit">
+			<div class="meeting_info_before">
 				<div id="meeting_info_left">
 					<img src="" value="모임사진">
 					<p>모임기간 :</p> 
@@ -76,7 +85,7 @@
 				<div id="meeting_info_right">
 				</div>
 			</div>--%>
-		</div>
+		
 		<div id="meeting_king_info">
 			<p>모임개설자</p><br/>
 			<img src="">
@@ -100,6 +109,7 @@
 			
 		</div>
 		<hr/>	
+	</div>
 	</div>
 </body>
 </html>

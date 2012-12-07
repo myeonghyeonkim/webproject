@@ -76,7 +76,9 @@
 </head>
 <body>
 	<div id="meeting">
-
+		<jsp:include page="share/myinfo_header.jsp">
+  <jsp:param name="current" value="Sign Up"/>
+	</jsp:include>
 		<div class="hero-unit">
 			<form action ="meeting_create_ok.jsp" method="post">
 			<div class="hero-unit_1">
