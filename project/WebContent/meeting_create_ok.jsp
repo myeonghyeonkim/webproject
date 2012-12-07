@@ -107,6 +107,7 @@
 		<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
 		개설된페이지로가기</a>
 		<%} %>
+		</p>
 	</div>
 </body>
 </html>
