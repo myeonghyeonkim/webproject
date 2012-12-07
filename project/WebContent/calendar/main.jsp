@@ -125,15 +125,20 @@ for(int index = 1; index <= endDay; index++)
 	  	<font color = <%=color %>><%=index%></a>
 	  
 <%
-	Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-
-	String url = "jdbc:odbc:dbMember";
-	Connection conn = DriverManager.getConnection(url,"Member","apple");
+	Connection conn=null;
+	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+	Class.forName("com.mysql.jdbc.Driver");
+	String url="jdbc:mysql://localhost:3306/webpro";
+	String user="admin";
+	String user_pwd="aldks12";		
+	conn = DriverManager.getConnection(url, user, user_pwd);
 
 	Statement stmt = conn.createStatement();
+	String sql = "SELECT * FROM calendar WHERE year='" + year + "'and month='" + (month + 1) + "' and day='" + index +"'";
 
 	String strSQL = "SELECT * FROM calendar WHERE year='" + year + "'and month='" + (month + 1) + "' and day='" + index +"'";
-	ResultSet rs = stmt.executeQuery(strSQL);  		
+	rs = stmt.executeQuery(strSQL);  		
   			
 while (rs.next()){
 %>

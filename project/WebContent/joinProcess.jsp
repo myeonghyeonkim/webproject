@@ -9,7 +9,7 @@
 	String name=request.getParameter("name");
 	String phone = request.getParameter("call1") + request.getParameter("call2") + request.getParameter("call3");
 	String mypage_url=request.getParameter("mypage_url");
-	String photo="http://localhost:8080/project/image/2.jpg";
+	String photo="image\\2.jpg";
 	
 	Connection conn=null;
 	PreparedStatement pstmt=null;
