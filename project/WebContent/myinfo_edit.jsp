@@ -103,7 +103,7 @@
   <jsp:param name="current" value="Sign Up"/>
 	</jsp:include>
 	<div>
-
+		<div class="hero-unit">
 		<% if(session.getAttribute("id") !=null) { %>
 		
 		<form id="myinfo_password_check" method="post" action="myinfo_edit_ok.jsp">
@@ -141,6 +141,7 @@
 		</form>
 
 		<% } %>
+		</div>
 	</div>
 	<jsp:include page="share/footer.jsp">
   <jsp:param name="current" value="Sign Up"/>
