@@ -32,6 +32,7 @@
  			pstmt.setString(2,meeting_name);
  		
  			pstmt.executeUpdate();
+ 			System.out.println("참여 신청되었습니다.");
  			response.sendRedirect("meeting_page.jsp?meeting_name="+ meeting_name+"&num="+num1);
 
 		}

@@ -29,7 +29,7 @@
  			pstmt.setString(1,user_id);
  			pstmt.setString(2,meeting_name);
  			pstmt.executeUpdate();
- 			response.sendRedirect("myinfo_history.jsp");
+ 			response.sendRedirect("myinfo_history1.jsp");
 
 	}catch(Exception e){
 		e.printStackTrace();

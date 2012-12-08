@@ -25,8 +25,8 @@ try{
 	String user_pwd="aldks12";		
 	conn = DriverManager.getConnection(url, user, user_pwd);
 
-	String sql = "SELECT * FROM studygroup,member where studygroup.meeting_name = member.meeting_name and member.user_id = ?";
-	pstmt = conn.prepareStatement(sql);
+	String sql1 = "SELECT * FROM user,studygroup where user.user_id=studygroup.user_id and studygroup.user_id = ?";
+	pstmt = conn.prepareStatement(sql1);
 	pstmt.setString(1, id);
 	rs = pstmt.executeQuery();
 }
@@ -44,14 +44,15 @@ e.printStackTrace();
 </head>
 <body>
 <div id="history">
-		<p>내가 참여한 목록</p>
-		<div id="history_parti">
-		<%while(rs.next()) { %>
-				
-				<div id="history_photo1">
+	
+	<p>내가 개설한 목록</p>
+	<div id="history_king">
+			<%while(rs.next()) { %>
+		<div id="history_content">
+				<div id="history_photo2">
 				<img src ="<%=rs.getString("group_image")%>" width="100" height="100">
 				</div>
-				<div id="history_content1">
+				<div id="history_content2">
 				<p>모임제목 : <%=rs.getString("meeting_subject")%></p>
 				<p>접수기간 : <%=rs.getString("sign_day_start")%><%=rs.getString("sign_time_start") %>
 										부터 <%=rs.getString("sign_day_end") %><%=rs.getString("sign_time_end") %></p>
@@ -64,14 +65,14 @@ e.printStackTrace();
 				<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name") %>">
 				<button type="submit" class="btn btn-large btn-block btn-primary">페이지로가기</button>
 				</a>
-				<a href="partperson_minus.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=id%>">
+				<a href="partperson_minus1.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=id%>">
 				<button type="submit" class="btn btn-large btn-block btn-primary">참여취소</button>
 				</a>
 		</div>
 		<hr/>
 		<%} %>
-			
-
+	</div>
 </div>
 </body>
 </html>
+
