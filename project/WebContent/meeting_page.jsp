@@ -229,9 +229,8 @@ try{
 				<h1>댓글정보</h1><hr/>
 				<p><img src="<%=rs.getString("photo") %>" width="100" height="100">
 				<%=rs.getString("user_content") %></p>
+				<a href="comment_delete.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=user_id%>">삭제</a>
 		</div>
-		
-	
 <%} %>
 	</div>
 	</div>

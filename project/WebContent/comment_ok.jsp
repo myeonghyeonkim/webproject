@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%
+		request.setCharacterEncoding("utf-8");
  		String user_id=request.getParameter("user_id");
  		String meeting_name=request.getParameter("meeting_name");
  		String user_content=request.getParameter("user_content");

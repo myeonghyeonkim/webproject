@@ -84,12 +84,10 @@
 		if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
 		
 	}
-		
 		String sql3="select * from studygroup where meeting_name=?";
 	  pstmt = conn.prepareStatement(sql3);
 	  pstmt.setString(1,meeting_name);
 	  rs= pstmt.executeQuery();
-	 	
 %>
 <html>
 <head>
