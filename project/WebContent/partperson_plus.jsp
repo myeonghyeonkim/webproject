@@ -7,7 +7,9 @@
  		Connection conn=null;
  		PreparedStatement pstmt=null;
  		ResultSet rs=null;
- 		
+ 		int num1=Integer.parseInt(request.getParameter("num"));
+ 		num1++;
+
  		String message = "";
  		
  		try{
@@ -24,17 +26,14 @@
  			String user_pwd="aldks12";		
  			conn = DriverManager.getConnection(url, user, user_pwd);
 			
- 			String sql="insert into member(user_id,meeting_name) WHERE meeting_name=? ";
+ 			String sql="insert into member(user_id,meeting_name) values (?,?)";
  			pstmt = conn.prepareStatement(sql);
- 			pstmt.setString(1,meeting_name);
+ 			pstmt.setString(1,user_id);
+ 			pstmt.setString(2,meeting_name);
  		
  			pstmt.executeUpdate();
- %>
-<script language="javascript">
-	alert("참여등록 되었습니다.");
-	document.location="meeting_page.jsp";
-</script>
-<%
+ 			response.sendRedirect("meeting_page.jsp?meeting_name="+ meeting_name+"&num="+num1);
+
 		}
 	catch(Exception e){
 		e.printStackTrace();

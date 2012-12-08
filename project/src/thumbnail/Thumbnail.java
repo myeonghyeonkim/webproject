@@ -16,8 +16,8 @@ public class Thumbnail {
   RenderedOp rOp = JAI.create("fileload",loadFile); //원본이미지파일로 객체생성
   BufferedImage im = rOp.getAsBufferedImage(); // 버퍼드이미지 객체를 얻어옴
   if(zoom <=0) zoom=1;
-  int width = 200;
-  int height = 200;
+  int width = 100;
+  int height = 100;
   // 메모리에 이미지 공간을 생성
   BufferedImage thumb = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
   Graphics2D g2 = thumb.createGraphics(); // 버퍼드이미지객체로 부터 그래픽2D객체를 얻어옴

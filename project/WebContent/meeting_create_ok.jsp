@@ -18,7 +18,7 @@
 	String meeting_day_end =request.getParameter("meeting_day_end");
 	String sign_day_start=request.getParameter("sign_day_start");
 	String sign_day_end = request.getParameter("sign_day_end");
-	String group_image =request.getParameter("group_image");
+	String group_image="meeting_photo\\study.jpg";
 	String meeting_explain =request.getParameter("intro");
 	
 	int part_person =Integer.parseInt(request.getParameter("limit_user_num"));

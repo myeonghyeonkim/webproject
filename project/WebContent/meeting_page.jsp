@@ -3,8 +3,11 @@
 <%@ page import="java.sql.*"%>
 
 <%
+	int num=0;
+	String image_path="";
 	request.setCharacterEncoding("utf-8");
   //스터디그룹아이디
+  String user_id1=request.getParameter("user_id");
 	String user_id=(String)session.getAttribute("id");
 	//int n=LAST_INSERT_ID();
 	String meeting_name=request.getParameter("meeting_name");
@@ -45,8 +48,19 @@
 		String user="admin";
 		String user_pwd="aldks12";		
 		conn = DriverManager.getConnection(url, user, user_pwd);
+		
+		
+		String sql1="SELECT * FROM studygroup WHERE meeting_name=?";
+  	pstmt=conn.prepareStatement(sql1);
+  	pstmt.setString(1,meeting_name);
+  	rs = pstmt.executeQuery();
+  	if(rs.next()){
+			image_path = rs.getString("group_image");
+		}
+		
 
-		String sql = "select * from studygroup where meeting_name=?";
+		
+  	String sql = "select * from studygroup where meeting_name=?";
 		pstmt = conn.prepareStatement(sql);	
 		pstmt.setString(1,meeting_name);
 		rs = pstmt.executeQuery();
@@ -95,7 +109,13 @@
 					<div id="meeting_info_left">
 					<% if(rs.next()){%>
 					<div class="meeting_info_left_1">
-					<img src="" value="모임사진">
+					
+					<img src="<%=image_path %>" width="100" height ="100" class="imgpolaroid"/>
+					<form action="meeting_photo.jsp" method="post" enctype="multipart/form-data">
+						<input type="file" name="image" value="찾기"><p>
+						<input type="submit" class="btn btn-primary btn-large" value="전송">
+					</form>
+		
 					</div>
 					<div class="meeting_info_left_2">
 					<p>모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start") %>
@@ -104,15 +124,18 @@
 					<p>접수기간 : <%=rs.getString("sign_day_start")%><%=rs.getString("sign_time_start") %>
 										부터 <%=rs.getString("sign_day_end") %><%=rs.getString("sign_time_end") %></p>
 					<p>모임장소 : <%=rs.getString("meeting_place") %></p>
-					<p>총 모집인원 : <%=rs.getString("part_person") %> 명 / 현재 참여자 : 명</p>
-					<p>
-					<a href="partperson_plus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">
+					
+					<a href="partperson_plus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>
+					&num=<%=num%>">
+						참여하기
 						<button class="btn btn-large btn-primary" type="button">참여하기</button>
 					</a>
 					<a href="partperson_minus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">
 						<button class="btn btn-large" type="button">참여취소</button>
 					</a>
-					</p>
+					<p>총 모집인원 : <%=rs.getString("part_person") %> 명 / 현재 참여자 : <%=num%>명</p>
+					<p>
+					
 					</div>
 				</div>
 				<div id="meeting_info_right">
@@ -162,27 +185,25 @@
 			</div>
 		</div>
 		<hr/>
-		
 <%}%>
-<%--<%
+<%
 	try{
-	String sql1 = "select * from user,member where user.user_id = member.user_id meeting_name=?";
-	pstmt = conn.prepareStatement(sql1);	
+	String sql2 = "select * from user,member where user.user_id = member.user_id and meeting_name=?";
+	pstmt = conn.prepareStatement(sql2);	
 	pstmt.setString(1,meeting_name);
 	rs = pstmt.executeQuery();
 	}
 	catch(Exception e){
 		e.printStackTrace();
 	}
-
+%>
 		<div id="meeting_user_list">
+		<p>참여자 명단(정원 x명 / x명참여)</p>
 		<% while(rs.next()) {%>
-			<p>참여자 명단(정원 x명 / x명참여)</p>
-			참여자 : <%=rs.getString("photo") %>
+		 	<img src ="<%=rs.getString("photo") %>" width="100" height="100">
 		</div>
+<%}%>
 		<hr/>
-<%}%>--%>
-
 		<div id="meeting_comment">
 			<h1>댓글</h1><hr/>
 			<form action="comment_ok.jsp" name="comment" method="post">
@@ -210,7 +231,7 @@ try{
 	<% while(rs.next()) {%>
 		<div id="meeting_comment_ok">	
 				<h1>댓글정보</h1><hr/>
-				<p><img src="<%=rs.getString("photo") %>">
+				<p><img src="<%=rs.getString("photo") %>" width="100" height="100">
 				<%=rs.getString("user_content") %></p>
 		</div>
 		

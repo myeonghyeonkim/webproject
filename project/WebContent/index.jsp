@@ -42,7 +42,6 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/jquery-1.8.2.min.js"></script>
-	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	
 	<script src="js/bootstrap.min.js"></script>

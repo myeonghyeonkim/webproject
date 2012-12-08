@@ -1,6 +1,9 @@
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page import="java.sql.*"%>
+
 <%if(session.getAttribute("id")!=null) {%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,9 +160,7 @@
 			</div>
 			<div class="hero-unit_3">
 				<div class="hero-unit_3_1">
-					<div>대표이미지</div>  
-						<div><img src="..." class="img-polaroid"></div>
-						<div><input type="text" name="group_image"></div>
+						
 					<div>상세정보 입력</div>	
 					<div>
 						<textarea name="intro" cols="70" rows="10"></textarea>
