@@ -42,7 +42,9 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/jquery.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://webnoon.net/attachment/cfile2.uf@1477010F4A6EC01064B402.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
 
@@ -58,7 +60,7 @@
 	}
 
 	$(document).ready(function(){
-			$("#category 1").click(function(e){
+			$("#category1 a").click(function(e){
 				e.preventDefault();
 				var category = $(this).attr("title");
 				$("#newslist li").fadeOut("fast");
@@ -67,7 +69,7 @@
 			});
 	});
 	$(document).ready(function(){
-		$("#category 2").click(function(e){
+		$("#category2 a").click(function(e){
 			e.preventDefault();
 			var category = $(this).attr("title");
 			$("#newslist li").fadeOut("fast");
@@ -76,7 +78,7 @@
 		});
 });
 	$(document).ready(function(){
-		$("#category 3").click(function(e){
+		$("#category3 a").click(function(e){
 			e.preventDefault();
 			var category = $(this).attr("title");
 			$("#newslist li").fadeOut("fast");
@@ -85,7 +87,7 @@
 		});
 });
 	$(document).ready(function(){
-		$("#category 4").click(function(e){
+		$("#category4 a").click(function(e){
 			e.preventDefault();
 			var category = $(this).attr("title");
 			$("#newslist li").fadeOut("fast");
@@ -93,6 +95,7 @@
 			else{$("#newslist li[class*="+category+"]").fadeIn("slow");}
 		});
 });
+
 
 
 </script>
@@ -192,6 +195,7 @@
     			<h3>컴퓨터</h3>
         	<ul>
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
+	       		
         		<li><a href="#" title="pro">프로그래밍</a></li>
             <li><a href="#" title="software">소프트웨어</a></li>
             <li><a href="#" title="computer_ja">자격증</a></li>
@@ -254,12 +258,17 @@
 %>
     	<li class="pro"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
       </li>
       <hr/>   
-        <%} %>
-        
-<%
+       
+   <%} %>
+        <%
 		String sql1 = "select * from studygroup where category_1='software'";  
 		pstmt = conn.prepareStatement(sql1);	
 		rs = pstmt.executeQuery();
@@ -408,13 +417,12 @@
       	<%while(rs.next()) {%>
       	모임정보 : <%= rs.getString("meeting_name")%>
      </li><hr/>    
+     <%rs.close(); %>
 <%} %> 
-            
+           
        
-    </ul>
+        </ul>
     </div>
-
-</div>
 				<div id="body5_sub1">
 				</div>
 				<div id="body5_sub2">
@@ -426,7 +434,7 @@
 					</div>
 										
 				</div>
-			</div>
+</div>
 			
 
 		</div>

@@ -26,7 +26,7 @@ input,button,textarea,select{font-size:100%;}
 #wrap_1{width:1000px; margin:0 auto;}
 #meeting{
 	width:1000px; height:800px; background-color:#CCC;
-	overflow:auto; 
+	
 }
 #top{width:1000px; height:120px; background-color:#BDBDC9;}
 #top_left{width:60%; height:100%; float:left;}
