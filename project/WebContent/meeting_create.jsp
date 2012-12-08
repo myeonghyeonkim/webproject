@@ -101,43 +101,30 @@
 				<table border="1">
 					<tr>
 						<td>관심사</td>  
-						<td>세부목록</td>
-						<td>지역별</td>
-						<td>요일별</td>
+						
 					</tr>
 					<tr>
 					<td>
 						<select name="select_1">
-							<option value="computer">컴퓨터</option>
-							<option value="english">영어</option>
+							<p>관심사</p>
+							<option value="pro">프로그래밍</option>
+							<option value="software">소프트웨어</option>
+							<option value="computer_ja">자격증</option>
+							<option value="etc1">기타</option>
+							<option value="talking">영어회화</option>
+							<option value="toeic">토익</option>
+							<option value="toefl">토플</option>
+							<option value="teps">텝스</option>
+							<option value="rule">정치/법</option>
+							<option value="social">사회문화</option>
+							<option value="admi">행정</option>
+							<option value="etc2">기타</option>
+							<option value="jeon">전기/전자</option>
+							<option value="gun">건축/토목</option>
+							<option value="machine">기계/물리</option>
+							<option value="chemisty">화학/생명</option>
 						</select>
 					</td>
-						<td>
-						<select name="select_2">
-							<option value="talking">영어</option>
-							<option value="software">소프트웨어</option>
-						</select>
-						</td>
-						<td>
-						<select name="select_3">
-							<option value="gy">경기</option>
-							<option value="se">서울</option>
-							<option value="in">인천</option>
-							<option value="ga">강원</option>
-							<option value="cb">충북</option>
-							<option value="cn">충남</option>
-							<option value="jb">전북</option>
-							<option value="js">전남</option>
-							<option value="kb">경북</option>
-							<option value="kn">경남</option>
-						</select>
-						</td>
-						<td>
-						<select name="select_4">
-							<option value="weekday">평일</option>
-							<option value="weekend">주말</option>
-						</select>
-						</td>
 					</tr>
 				</table>	
 			</div>
