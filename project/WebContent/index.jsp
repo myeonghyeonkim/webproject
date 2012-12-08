@@ -42,9 +42,9 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/jquery-1.8.2.min.js"></script>
-	<script src="js/jquery.js"></script>
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://webnoon.net/attachment/cfile2.uf@1477010F4A6EC01064B402.js"></script>
+	
 	<script src="js/bootstrap.min.js"></script>
 
 
