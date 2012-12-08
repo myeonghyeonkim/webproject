@@ -11,19 +11,10 @@
 <title>회원관리 시스템 회원가입 페이지</title>
 </head>
 <body>
-	<jsp:include page="share/myinfo_header.jsp">
+	<jsp:include page="share/join_header.jsp">
   <jsp:param name="current" value="Sign Up"/>
 	</jsp:include>
-<div id="wrap">
-<div id="top">
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="./index.jsp">메인으로</a>
-     </div>
-    </div>
-  </div>
-  </div>
+
   <div id="join">
   <div class="hero-unit">
 	<form name="joinform" action="joinProcess.jsp" method="post">

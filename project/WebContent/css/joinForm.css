@@ -22,8 +22,6 @@ input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inher
 input,button,textarea,select{font-size:100%;}
 
 /*HTML*/
-#wrap{width:1000px; height:500px; margin:auto;}
-
 .hero-unit{height: 300px;
 	border: 2px solid #d7e9f9;
 	-moz-border-radius: 10px;
