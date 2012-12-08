@@ -1,9 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ page import="java.sql.*"%>
-
 <%if(session.getAttribute("id")!=null) {%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-
+	
 	<script type="text/javascript" src="js/jquery-1.4.1.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
-
+	
 	<link type="text/css" href="css/meeting_create.css" rel="stylesheet" />
 	<link type="text/css" href="css/ui.all.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
@@ -46,6 +43,7 @@
 		content: 'Hello, MJ!'
 	});
 	infowindow.open(map, marker);
+	
 	};
 </script>
 
@@ -102,7 +100,7 @@
 
 
 	</script>
-
+	
 </head>
 <body>
 	<div id="meeting">
@@ -131,7 +129,7 @@
 				<table border="1">
 					<tr>
 						<td>관심사</td>  
-
+						
 					</tr>
 					<tr>
 					<td>
@@ -160,11 +158,9 @@
 			</div>
 			<div class="hero-unit_3">
 				<div class="hero-unit_3_1">
-<<<<<<< HEAD
-
-=======
-						
->>>>>>> d8a6da7fb7876fa56ff32e0d40b72b67f46767b0
+					<div>대표이미지</div>  
+						<div><img src="..." class="img-polaroid"></div>
+						<div><input type="text" name="group_image"></div>
 					<div>상세정보 입력</div>	
 					<div>
 						<textarea name="intro" cols="70" rows="10"></textarea>
@@ -299,7 +295,9 @@
 			<div>모임장소입력</div>
 					<input type="text" name="input_place">
 			<div>지도</div>
-					<div id="map"></div>
+					<div id="map">
+						<input type="text" name="map">
+					</div>
 			</div>
 			</div>
 			<div>
