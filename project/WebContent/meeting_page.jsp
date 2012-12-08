@@ -72,6 +72,22 @@
 <title>모임페이지</title>
 </head>
 <body>
+<div id="wrap">
+	<div id="wrap_1">
+	<div id="top">
+		<div id="top_left">
+			<h1>우리들의 스터디공간</h1>
+			<h1>S T U D Y - M E E T I N G </h1>
+		</div>
+		<div id="top_right"> 
+		</div>
+		<div id="top_bottom">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="index.jsp">Home</a></li>
+				<li><a href="myinfo_main.jsp">내정보관리</a></li>
+			</ul>
+		</div>
+	</div>
 	<div id="meeting">
 		<div id="meeting_info">
 			<div id="meeting_info_before">
@@ -200,6 +216,8 @@ try{
 		
 	
 <%} %>
+	</div>
+	</div>
 	</div>
 	</div>
 </body>

@@ -78,8 +78,8 @@
 	<div id="meeting">
 			<div id="top">
 			<div id="top_left">
-			<div>우리들의 스터디공간</div>
-			<div>S T U D Y - M E E T I N G </div>
+			<p>우리들의 스터디공간</p><br/><br/>
+			<p>S T U D Y - M E E T I N G </p>
 			</div>
 			<div id="top_right"> 
 			</div>
