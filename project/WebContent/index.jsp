@@ -194,7 +194,7 @@
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
         		<li><a href="#" title="pro">프로그래밍</a></li>
             <li><a href="#" title="software">소프트웨어</a></li>
-            <li><a href="#" title="website">웹사이트제작</a></li>
+            <li><a href="#" title="computer_ja">자격증</a></li>
             <li><a href="#" title="etc1">기타</a></li>
         	</ul>
     			</div>
@@ -208,13 +208,33 @@
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
         		<li><a href="#" title="conversation">영어회화</a></li>
             <li><a href="#" title="toeic">토익</a></li>
-            <li><a href="#" title="toeple">토플</a></li>
-            <li><a href="#" title="tebs">텝스</a></li>
+            <li><a href="#" title="toefl">토플</a></li>
+            <li><a href="#" title="teps">텝스</a></li>
         	</ul>
     			</div>
 					<div id="body3_sub2_1">
+					<div id="category3">
+    			<h3>사회정치</h3>
+        	<ul>
+	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
+        		<li><a href="#" title="rule">정치/법</a></li>
+            <li><a href="#" title="social">사회문화</a></li>
+            <li><a href="#" title="admi">행정</a></li>
+            <li><a href="#" title="etc2">기타</a></li>
+        	</ul>
+    			</div>
 					</div>
 					<div id="body3_sub2_2">
+					<div id="category4">
+    			<h3>이공계</h3>
+        	<ul>
+	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
+        		<li><a href="#" title="jeon">전기/전자</a></li>
+            <li><a href="#" title="gun">건축/토목</a></li>
+            <li><a href="#" title="machine">기계/물리</a></li>
+            <li><a href="#" title="chemisty">화학/생명</a></li>
+        	</ul>
+    			</div>
 					</div>
 				</div>
 			</div>	
@@ -250,21 +270,141 @@
       </li><hr/>    
         <%} %>
 <%
-		String sql2 = "select * from studygroup where category_3='website'";  
+		String sql2 = "select * from studygroup where category_1='computer_ja'";  
 		pstmt = conn.prepareStatement(sql2);	
 		rs = pstmt.executeQuery();
 %>      
-		<li class="website"><br/>
+		<li class="computer_ja"><br/>
       	<%while(rs.next()) {%>
       	모임정보 : <%= rs.getString("meeting_name")%>
       </li><hr/>    
         <%} %> 
 <%
-		String sql3 = "select * from studygroup where category_4='etc1'";  
+		String sql3 = "select * from studygroup where category_1='etc1'";  
 		pstmt = conn.prepareStatement(sql3);	
 		rs = pstmt.executeQuery();
 %>         
     <li class="etc1"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql4 = "select * from studygroup where category_1='talking'";  
+		pstmt = conn.prepareStatement(sql4);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="talking"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql5 = "select * from studygroup where category_1='toeic'";  
+		pstmt = conn.prepareStatement(sql5);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="toeic"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql6 = "select * from studygroup where category_1='toefl'";  
+		pstmt = conn.prepareStatement(sql6);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="toefl"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql7 = "select * from studygroup where category_1='teps'";  
+		pstmt = conn.prepareStatement(sql7);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="teps"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql8 = "select * from studygroup where category_1='rule'";  
+		pstmt = conn.prepareStatement(sql8);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="rule"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql9 = "select * from studygroup where category_1='social'";  
+		pstmt = conn.prepareStatement(sql9);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="social"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql10 = "select * from studygroup where category_1='admi'";  
+		pstmt = conn.prepareStatement(sql10);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="admi"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql11 = "select * from studygroup where category_1='etc2'";  
+		pstmt = conn.prepareStatement(sql11);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="etc2"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql12 = "select * from studygroup where category_1='jeon'";  
+		pstmt = conn.prepareStatement(sql12);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="jeon"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql13 = "select * from studygroup where category_1='gun'";  
+		pstmt = conn.prepareStatement(sql13);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="gun"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql14 = "select * from studygroup where category_1='muchine'";  
+		pstmt = conn.prepareStatement(sql14);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="muchine"><br/>
+      	<%while(rs.next()) {%>
+      	모임정보 : <%= rs.getString("meeting_name")%>
+     </li><hr/>    
+<%} %> 
+<%
+		String sql15 = "select * from studygroup where category_1='chemisty'";  
+		pstmt = conn.prepareStatement(sql15);	
+		rs = pstmt.executeQuery();
+%>         
+    <li class="chemisty"><br/>
       	<%while(rs.next()) {%>
       	모임정보 : <%= rs.getString("meeting_name")%>
      </li><hr/>    
