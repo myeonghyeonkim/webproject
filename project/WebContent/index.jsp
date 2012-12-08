@@ -41,16 +41,11 @@
 	<link href="css/base.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="js/jquery-1.8.2.min.js"></script>
-	
+	<script src="js/jquery-1.8.2.min.js"></script>	
+	<script src="js/jquery.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	
 	<script src="js/bootstrap.min.js"></script>
-
-
-
-
-<script language="javascript">
+	<script language="javascript">
 	function logOut() {
 		document.location = "logout.jsp";
 	}
@@ -95,18 +90,14 @@
 			else{$("#newslist li[class*="+category+"]").fadeIn("slow");}
 		});
 });
-
-
-
 </script>
 </head>
 <body>
-
 	<div id="wrap">
 		<div id="top">
 			<div id="top_left">
-			<h1>우리들의 스터디공간</h1>
-			<h1>S T U D Y - M E E T I N G </h1>
+				<h1>우리들의 스터디공간</h1>
+				<h1>S T U D Y - M E E T I N G </h1>
 			</div>
 			<div id="top_right"> 
 			</div>
@@ -119,7 +110,6 @@
 		</div>
 		<div id="body">
 			<div class="body_1">
-			
 			</div>
 			<div class="body_2">
 				 <div id="login_state">
@@ -167,89 +157,73 @@
     						<div class="controls">
      	 						<input type="text" name="id" placeholder="아이디">
      	 					</div>
-  						</div>
-  						<div class="control-group">
-    						<label class="control-label" for="inputPassword">Password</label>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="inputPassword">Password</label>
     						<div class="controls">
       							<input type="password" name="pwd" placeholder="비밀번호">
     						</div>
-  						</div>
-						
+  							</div>
 						<a href="javascript:loginform.submit()">
 							<button type="submit" class="btn btn-large">로그인</button>
 						</a>&nbsp;&nbsp;
 						<a href="joinForm.jsp">회원가입</a>
-						<a href="meeting_create.jsp">모임 개설하기</a>
-						
+						<a href="meeting_create.jsp">모임 개설하기</a>						
+						</form>
 					</form>
-				</form>
-				</div>
+					</div>
 				<%} %>
-
 				</div>
 				</div>
 				
 			<div class="body_3">
-				<div id="body3_sub1">
-					<div id="category1">
-    			<h3>컴퓨터</h3>
-        	<ul>
+			<div id="category">
+				<div id="category1">
+    				<h3>컴퓨터</h3>
+        				<ul>
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
-	       		
-        		<li><a href="#" title="pro">프로그래밍</a></li>
-            <li><a href="#" title="software">소프트웨어</a></li>
-            <li><a href="#" title="computer_ja">자격증</a></li>
-            <li><a href="#" title="etc1">기타</a></li>
-        	</ul>
+	        				<li><a href="#" title="pro">프로그래밍</a></li>
+    	    	    		<li><a href="#" title="software">소프트웨어</a></li>
+        	    			<li><a href="#" title="computer_ja">자격증</a></li>
+            				<li><a href="#" title="etc1">기타</a></li>
+        				</ul>
     			</div>
-				
-				</div>
-
-				<div id="body3_sub2">
-					<div id="category2">
-    			<h3>영어회화</h3>
-        	<ul>
+				<div id="category2">
+    				<h3>영어회화</h3>
+        				<ul>
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
-        		<li><a href="#" title="conversation">영어회화</a></li>
-            <li><a href="#" title="toeic">토익</a></li>
-            <li><a href="#" title="toefl">토플</a></li>
-            <li><a href="#" title="teps">텝스</a></li>
-        	</ul>
-    			</div>
-					<div id="body3_sub2_1">
-					<div id="category3">
-    			<h3>사회정치</h3>
-        	<ul>
+        					<li><a href="#" title="conversation">영어회화</a></li>
+        				    <li><a href="#" title="toeic">토익</a></li>
+        				    <li><a href="#" title="toefl">토플</a></li>
+        				    <li><a href="#" title="teps">텝스</a></li>
+        				</ul>
+    			</div>		
+				<div id="category3">
+    				<h3>사회정치</h3>
+        				<ul>
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
-        		<li><a href="#" title="rule">정치/법</a></li>
-            <li><a href="#" title="social">사회문화</a></li>
-            <li><a href="#" title="admi">행정</a></li>
-            <li><a href="#" title="etc2">기타</a></li>
-        	</ul>
-    			</div>
-					</div>
-					<div id="body3_sub2_2">
-					<div id="category4">
-    			<h3>이공계</h3>
-        	<ul>
+        					<li><a href="#" title="rule">정치/법</a></li>
+            				<li><a href="#" title="social">사회문화</a></li>
+           					<li><a href="#" title="admi">행정</a></li>
+            				<li><a href="#" title="etc2">기타</a></li>
+        				</ul>
+    			</div>					
+				<div id="category4">
+    				<h3>이공계</h3>
+        				<ul>
 	       		<!--  <li><a href="#" title="all">전체기사</a></li>-->
-        		<li><a href="#" title="jeon">전기/전자</a></li>
-            <li><a href="#" title="gun">건축/토목</a></li>
-            <li><a href="#" title="machine">기계/물리</a></li>
-            <li><a href="#" title="chemisty">화학/생명</a></li>
-        	</ul>
-    			</div>
-					</div>
-				</div>
+        					<li><a href="#" title="jeon">전기/전자</a></li>
+            				<li><a href="#" title="gun">건축/토목</a></li>
+            				<li><a href="#" title="machine">기계/물리</a></li>
+            				<li><a href="#" title="chemisty">화학/생명</a></li>
+        				</ul>
+    			</div>							
 			</div>	
-			<div class="body_4"></div>
-			<div class="body_5">
-			<div id="wrap">
-
-		
-		<div id="newslist">
-    <h3>뉴스 목록</h3>
-    <ul>
+			</div>
+			<div class="body_5">		
+				<div id="newslist">
+    				<h3>모임정보 목록</h3>
+    					<ul>
     
 <%
 	String sql = "select * from studygroup where category_1='pro'";
@@ -258,17 +232,23 @@
 %>
     	<li class="pro"><br/>
       	<%while(rs.next()) {%>
+      	
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
+      				<div class="meeting_photo_1_1">
+      					<img src="<%=rs.getString("group_image") %>">
+      					
+      				</div>
+      				<div class="meeting_photo_1_2">
+      					모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      					모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      							<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      					모임장소 : <%=rs.getString("meeting_place") %>
+      					<hr/>
+      				</div>
       		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
-      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
       	</a>
       </li>
-      <hr/>   
        
    <%} %>
         <%
@@ -280,14 +260,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>      		
+				<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>
       	</a>
-      </li><hr/>    
+      </li>   
         <%} %>
 <%
 		String sql2 = "select * from studygroup where category_1='computer_ja'";  
@@ -298,14 +283,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>	
       	</a>
-      </li><hr/>    
+      </li>   
         <%} %> 
 <%
 		String sql3 = "select * from studygroup where category_1='etc1'";  
@@ -316,14 +306,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>	
       	</a>
-     </li><hr/>    
+     </li>  
 <%} %> 
 <%
 		String sql4 = "select * from studygroup where category_1='talking'";  
@@ -334,14 +329,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+				<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>  
 <%} %> 
 <%
 		String sql5 = "select * from studygroup where category_1='toeic'";  
@@ -352,14 +352,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제	목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li> 
 <%} %> 
 <%
 		String sql6 = "select * from studygroup where category_1='toefl'";  
@@ -370,14 +375,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>
 <%} %> 
 <%
 		String sql7 = "select * from studygroup where category_1='teps'";  
@@ -388,14 +398,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>    
 <%} %> 
 <%
 		String sql8 = "select * from studygroup where category_1='rule'";  
@@ -406,14 +421,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>   
 <%} %> 
 <%
 		String sql9 = "select * from studygroup where category_1='social'";  
@@ -424,14 +444,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>
 <%} %> 
 <%
 		String sql10 = "select * from studygroup where category_1='admi'";  
@@ -442,14 +467,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>	
       	</a>
-     </li><hr/>    
+     </li> 
 <%} %> 
 <%
 		String sql11 = "select * from studygroup where category_1='etc2'";  
@@ -460,14 +490,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>  
 <%} %> 
 <%
 		String sql12 = "select * from studygroup where category_1='jeon'";  
@@ -478,14 +513,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">      		
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>
 <%} %> 
 <%
 		String sql13 = "select * from studygroup where category_1='gun'";  
@@ -496,14 +536,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>
       	</a>
-     </li><hr/>    
+     </li>  
 <%} %> 
 <%
 		String sql14 = "select * from studygroup where category_1='muchine'";  
@@ -514,14 +559,19 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>
 <%} %> 
 <%
 		String sql15 = "select * from studygroup where category_1='chemisty'";  
@@ -532,40 +582,32 @@
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">
-      		<img src="<%=rs.getString("group_image") %>">
-      		</div>
-      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
-      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      			<div class="meeting_photo_1_1">
+      				<img src="<%=rs.getString("group_image") %>">
+      			</div>
+      			<div class="meeting_photo_1_2">
+      				모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      				모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
-      		모임장소 : <%=rs.getString("meeting_place") %>
+      				모임장소 : <%=rs.getString("meeting_place") %>
+      				<hr/>
+      			</div>
+      		</div>		
       	</a>
-     </li><hr/>    
+     </li>   
      <%rs.close(); %>
-<%} %> 
-           
-       
+<%} %>       
         </ul>
-    </div>
-				<div id="body5_sub1">
-				</div>
-				<div id="body5_sub2">
-					<div id="body5_sub2_1">
-					</div>
-					<div id="body5_sub2_2">
-					</div>
-					<div id="body5_sub2_3">
-					</div>
-										
-				</div>
+        
+        </div>
+        </div>	
 </div>
-			
-
-		</div>
+</div>
+	
 		<div id="bottom">
 			<footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+        		<p>&copy; Company 2012</p>
+      		</footer>
 		</div>
-	</div>
 </body>
 </html>

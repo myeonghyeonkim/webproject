@@ -43,6 +43,7 @@
 		content: 'Hello, MJ!'
 	});
 	infowindow.open(map, marker);
+	
 	};
 </script>
 
@@ -294,7 +295,9 @@
 			<div>모임장소입력</div>
 					<input type="text" name="input_place">
 			<div>지도</div>
-					<div id="map"></div>
+					<div id="map">
+						<input type="text" name="map">
+					</div>
 			</div>
 			</div>
 			<div>
