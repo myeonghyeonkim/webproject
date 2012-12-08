@@ -63,7 +63,7 @@
 		<h2>마이페이지</h2>
 
 	 <div class="mypage_photo1">
-			<img src="<%=image_path %>" width="200" height ="200" class="imgpolaroid"/>
+			<img src="<%=image_path %>" width="100" height ="100" class="imgpolaroid"/>
 			<form action="myinfo_photo.jsp" method="post" enctype="multipart/form-data">
 				<input type="file" name="image" value="찾기"><p>
 				<input type="submit" class="btn btn-primary btn-large" value="전송">

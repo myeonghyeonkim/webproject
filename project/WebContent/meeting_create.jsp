@@ -160,7 +160,11 @@
 			</div>
 			<div class="hero-unit_3">
 				<div class="hero-unit_3_1">
+<<<<<<< HEAD
 
+=======
+						
+>>>>>>> d8a6da7fb7876fa56ff32e0d40b72b67f46767b0
 					<div>상세정보 입력</div>	
 					<div>
 						<textarea name="intro" cols="70" rows="10"></textarea>
