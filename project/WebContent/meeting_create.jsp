@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
 	
@@ -17,7 +18,33 @@
 	<script type="text/javascript" src="js/ui.core.js"></script>
 	<script type="text/javascript" src="js/ui.datepicker.js"></script>
 	<script type="text/javascript" src="js/ui.datepicker-ko.js"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d2e4aaa3bb6abfb844cb5bdbaecacf2bc7faa5a2"></script>
+<script type="text/javascript">
+	window.onload = function() {
+	var position = new daum.maps.LatLng(37.22182591381256, 127.18690184074735);
 
+	var map = new daum.maps.Map(document.getElementById('map'), {
+		center: position,
+		level: 4,
+		mapTypeId: daum.maps.MapTypeId.HYBRID
+	});
+	var zoomControl = new daum.maps.ZoomControl();
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+	var mapTypeControl = new daum.maps.MapTypeControl();
+	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+
+	var marker = new daum.maps.Marker({
+		position: position
+	});
+	marker.setMap(map);
+
+	var infowindow = new daum.maps.InfoWindow({
+		content: 'Hello, MJ!'
+	});
+	infowindow.open(map, marker);
+	};
+</script>
 
 <script type="text/javascript">
 
@@ -267,8 +294,8 @@
 			<div>모임장소입력</div>
 					<input type="text" name="input_place">
 			<div>지도</div>
-					<input type="text" name="map">
-					<!-- 지도연동 ----------------------------------------------------->
+					<div id="map"></div>
+			</div>
 			</div>
 			<div>
 				<input type="submit" value="모임개설하기">	

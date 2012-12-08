@@ -9,9 +9,7 @@
   //int studygroup_id=1;
 	String meeting_subject=request.getParameter("subject");
 	String category_1 =request.getParameter("select_1");
-	String category_2 =request.getParameter("select_2");
-	String category_3 =request.getParameter("select_3");
-	String category_4 =request.getParameter("select_4");
+	
 	String meeting_time_start = request.getParameter("select_5");
 	String meeting_time_end = request.getParameter("select_6");
 	String sign_time_start = request.getParameter("select_7");
@@ -52,32 +50,30 @@
 		//pstmt = conn.prepareStatement(sql);
 		//pstmt.setInt(1, studygroup_id);
 		//rs = pstmt.executeQuery();
-		String sql2 = "INSERT INTO studygroup(category_1,category_2,category_3,category_4,meeting_time_start,meeting_time_end" + 
-				",sign_time_start,sign_time_end,meeting_day_start,sign_day_start,sign_day_end,group_image,meeting_explain,meeting_name"+
-		",part_person,meeting_place,meeting_map,user_id,meeting_subject,meeting_day_end) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";		//디비 insert
+		String sql2 = "INSERT INTO studygroup(category_1,meeting_time_start,meeting_time_end," + 
+				" sign_time_start,sign_time_end,meeting_day_start,sign_day_start,sign_day_end,group_image,meeting_explain,meeting_name,"+
+		" part_person,meeting_place,meeting_map,user_id,meeting_subject,meeting_day_end) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";		//디비 insert
 
 		pstmt = conn.prepareStatement(sql2);				
 		pstmt.setString(1, category_1);
-		pstmt.setString(2, category_2);
-		pstmt.setString(3, category_3);
-		pstmt.setString(4, category_4);
-		pstmt.setString(5, meeting_time_start);
-		pstmt.setString(6, meeting_time_end);
-		pstmt.setString(7, sign_time_start);
-		pstmt.setString(8, sign_time_end);
-		pstmt.setString(9, meeting_day_start);
-		pstmt.setString(10, sign_day_start);
-		pstmt.setString(11, sign_day_end);
-		pstmt.setString(12, group_image);
 		
-		pstmt.setString(13, meeting_explain);
-		pstmt.setString(14, meeting_name);
-		pstmt.setInt(15, part_person);
-		pstmt.setString(16, meeting_place);
-		pstmt.setString(17, meeting_map);
-		pstmt.setString(18, user_id);
-		pstmt.setString(19, meeting_subject);
-		pstmt.setString(20, meeting_day_end);
+		pstmt.setString(2, meeting_time_start);
+		pstmt.setString(3, meeting_time_end);
+		pstmt.setString(4, sign_time_start);
+		pstmt.setString(5, sign_time_end);
+		pstmt.setString(6, meeting_day_start);
+		pstmt.setString(7, sign_day_start);
+		pstmt.setString(8, sign_day_end);
+		pstmt.setString(9, group_image);
+		
+		pstmt.setString(10, meeting_explain);
+		pstmt.setString(11, meeting_name);
+		pstmt.setInt(12, part_person);
+		pstmt.setString(13, meeting_place);
+		pstmt.setString(14, meeting_map);
+		pstmt.setString(15, user_id);
+		pstmt.setString(16, meeting_subject);
+		pstmt.setString(17, meeting_day_end);
 	
 		pstmt.executeUpdate();
 	}
