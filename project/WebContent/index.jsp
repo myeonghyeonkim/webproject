@@ -259,6 +259,9 @@
     	<li class="pro"><br/>
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
       		모임제목 : <%=rs.getString("meeting_subject") %><br/>
       		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
       						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
@@ -275,7 +278,15 @@
 %>
 			<li class="software"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
       </li><hr/>    
         <%} %>
 <%
@@ -285,7 +296,15 @@
 %>      
 		<li class="computer_ja"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
       </li><hr/>    
         <%} %> 
 <%
@@ -295,7 +314,15 @@
 %>         
     <li class="etc1"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -305,7 +332,15 @@
 %>         
     <li class="talking"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -315,7 +350,15 @@
 %>         
     <li class="toeic"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -325,7 +368,15 @@
 %>         
     <li class="toefl"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -335,7 +386,15 @@
 %>         
     <li class="teps"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -345,7 +404,15 @@
 %>         
     <li class="rule"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -355,7 +422,15 @@
 %>         
     <li class="social"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -365,7 +440,15 @@
 %>         
     <li class="admi"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -375,7 +458,15 @@
 %>         
     <li class="etc2"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -385,7 +476,15 @@
 %>         
     <li class="jeon"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -395,7 +494,15 @@
 %>         
     <li class="gun"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -405,7 +512,15 @@
 %>         
     <li class="muchine"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
 <%} %> 
 <%
@@ -415,7 +530,15 @@
 %>         
     <li class="chemisty"><br/>
       	<%while(rs.next()) {%>
-      	모임정보 : <%= rs.getString("meeting_name")%>
+      	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+      		<div id="meeting_photo">
+      		<img src="<%=rs.getString("group_image") %>">
+      		</div>
+      		모임제목 : <%=rs.getString("meeting_subject") %><br/>
+      		모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start")%>~
+      						<%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %><br/>
+      		모임장소 : <%=rs.getString("meeting_place") %>
+      	</a>
      </li><hr/>    
      <%rs.close(); %>
 <%} %> 
