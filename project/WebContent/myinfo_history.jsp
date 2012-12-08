@@ -25,13 +25,14 @@ try{
 	String user_pwd="aldks12";		
 	conn = DriverManager.getConnection(url, user, user_pwd);
 
-	String sql = "SELECT * FROM user,member where user.user_id=member.user_id and member.user_id = ?";
+	String sql = "SELECT * FROM studygroup,member where studygroup.meeting_name = member.meeting_name and member.user_id = ?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, id);
 	rs = pstmt.executeQuery();
 }
 catch(Exception e){
 e.printStackTrace();
+}
 
 %>
 
@@ -43,9 +44,10 @@ e.printStackTrace();
 </head>
 <body>
 <div id="history">
-		<%while(rs.next()) { %>
+		<p>내가 참여한 목록</p>
 		<div id="history_parti">
-				<p>내가 참여한 목록</p>
+		<%while(rs.next()) { %>
+				
 				<div id="history_photo1">
 				<img src ="<%=rs.getString("group_image")%>" width="100" height="100">
 				</div>
@@ -61,17 +63,17 @@ e.printStackTrace();
 				</div>
 		</div>
 		<hr/>
-		<%} %>
+		<%} %>	
 <%
 		String sql1 = "SELECT * FROM user,studygroup where user.user_id=studygroup.user_id and studygroup.user_id = ?";
 		pstmt = conn.prepareStatement(sql1);
 		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
 %>
+	<p>내가 개설한 목록</p>
 	<div id="history_king">
 			<%while(rs.next()) { %>
 		<div id="history_content">
-				<p>내가 참여한 목록</p>
 				<div id="history_photo2">
 				<img src ="<%=rs.getString("group_image")%>" width="100" height="100">
 				</div>
@@ -92,11 +94,3 @@ e.printStackTrace();
 </div>
 </body>
 </html>
-<%
-}
-	finally{
-	if(rs!=null) try{rs.close();} catch(Exception e){}
-	if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
-	if(conn!=null) try{conn.close();} catch(Exception e){}
-}
-%>

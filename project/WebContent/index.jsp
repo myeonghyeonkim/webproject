@@ -5,7 +5,7 @@
 <%
 	request.setCharacterEncoding("utf-8");
   //스터디그룹아이디
-	String user_id=(String)session.getAttribute("id");
+	
 	//int n=LAST_INSERT_ID();
 	
   
