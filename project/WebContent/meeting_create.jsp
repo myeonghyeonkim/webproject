@@ -76,20 +76,34 @@
 </head>
 <body>
 	<div id="meeting">
-
+			<div id="top">
+			<div id="top_left">
+			<div>우리들의 스터디공간</div>
+			<div>S T U D Y - M E E T I N G </div>
+			</div>
+			<div id="top_right"> 
+			</div>
+			<div id="top_bottom">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="index.jsp">Home</a></li>
+					<li><a href="myinfo_main.jsp">내정보관리</a></li>
+				</ul>
+			</div>
+		</div>
 		<div class="hero-unit">
 			<form action ="meeting_create_ok.jsp" method="post">
 			<div class="hero-unit_1">
-				<div>제목입력 : <input type="text" name="subject" placeholder="Text input" size="60">
+				<div>제목입력 : 
+				<input type="text" name="subject" placeholder="Text input" size="60">
 				</div>
 			</div>
 			<div class ="hero-unit_2">
 				<table border="1">
 					<tr>
-						<th>관심사</th>  
-						<th>세부목록</th>
-						<th>지역별</th>
-						<th>요일별</th>
+						<td>관심사</td>  
+						<td>세부목록</td>
+						<td>지역별</td>
+						<td>요일별</td>
 					</tr>
 					<tr>
 					<td>

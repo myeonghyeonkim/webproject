@@ -59,16 +59,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" lang="ko">
+	<script type="text/javascript" src="js/jquery-1.4.1.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	
+	<link type="text/css" href="css/meeting_page.css" rel="stylesheet" />
+	<link type="text/css" href="css/ui.all.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="js/ui.core.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker.js"></script>
+	<script type="text/javascript" src="js/ui.datepicker-ko.js"></script>
 <title>모임페이지</title>
 </head>
 <body>
 	<div id="meeting">
 		<div id="meeting_info">
 			<div id="meeting_info_before">
-				<div id="meeting_info_left">
+					<h1>모임정보</h1><hr/>
+					<div id="meeting_info_left">
 					<% if(rs.next()){%>
+					<div class="meeting_info_left_1">
 					<img src="" value="모임사진">
+					</div>
+					<div class="meeting_info_left_2">
 					<p>모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start") %>
 										부터 <%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %>
 					</p> 
@@ -76,12 +89,18 @@
 										부터 <%=rs.getString("sign_day_end") %><%=rs.getString("sign_time_end") %></p>
 					<p>모임장소 : <%=rs.getString("meeting_place") %></p>
 					<p>총 모집인원 : <%=rs.getString("part_person") %> 명 / 현재 참여자 : 명</p>
-					<a href="partperson_plus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">참여하기</a>
-					<a href="partperson_minus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">참여취소</a>
-					
+					<p>
+					<a href="partperson_plus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">
+						<button class="btn btn-large btn-primary" type="button">참여하기</button>
+					</a>
+					<a href="partperson_minus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">
+						<button class="btn btn-large" type="button">참여취소</button>
+					</a>
+					</p>
+					</div>
 				</div>
 				<div id="meeting_info_right">
-				  <p>지도가 들어갈 부분</p>
+				  <div>지도가 들어갈 부분</div>
 				</div>
 			</div>
 			<hr/>
@@ -91,9 +110,9 @@
 				<div id="meeting_info_right">
 				</div>
 			</div>--%>
-		<div id="meeting_king_info">
+		<div id="meeting_king">
 			<div id="meeting_explain">
-			<p>모임세부설명 : <%=rs.getString("meeting_explain") %>  </p>
+			<h1>모임세부설명</h1><hr/><%=rs.getString("meeting_explain") %> 
 			</div>
 			<hr/>
 			
@@ -115,10 +134,16 @@
 %>
 <div id="meeting_king_info">
 <% if(rs.next()) {%>
-			<p>모임개설자</p><br/>
-			<p><img src="<%=rs.getString("photo") %>"></p>
-			<p>핸드폰번호 : <%=rs.getString("phone") %></p>
-			<p>이메일  : <%=rs.getString("email") %></p>
+			<h1>모임개설자</h1><hr/>
+			<div class="meeting_king_info_1">
+			<div><img src="<%=rs.getString("photo") %>"></div>
+			</div>
+			<div class="meeting_king_info_2">
+				<ul>
+					<li>핸드폰번호 : <%=rs.getString("phone") %></li>
+					<li>이메일  : <%=rs.getString("email") %></li>
+				</ul>
+			</div>
 		</div>
 		<hr/>
 		
@@ -143,17 +168,16 @@
 <%}%>--%>
 
 		<div id="meeting_comment">
-			<p>댓글</p>
+			<h1>댓글</h1><hr/>
 			<form action="comment_ok.jsp" name="comment" method="post">
-					<input type="text" name="user_content">
+					<input type="text" name="user_content" size="80" placeholder="Text input">
 					<input type="hidden" name="user_id" value="<%=user_id %>">
 					<input type="hidden" name="meeting_name" value="<%=meeting_name %>">
 					<input type="submit" value="등록">
 			</form>
-		</div>
+		</div>		
 		<hr/>
 		
-
 <%
 try{
 			String sql3 = "select * from user,comment,studygroup where comment.meeting_name = studygroup.meeting_name"
@@ -166,16 +190,16 @@ try{
 			e.printStackTrace();
 		}
 %>
-		<div id="meeting_comment_ok">
+
 	<% while(rs.next()) {%>
-				<p>댓글정보</p><br/>
-				<p><img src="<%=rs.getString("photo") %>"></p>
-				<p><%=rs.getString("user_content") %></p>
+		<div id="meeting_comment_ok">	
+				<h1>댓글정보</h1><hr/>
+				<p><img src="<%=rs.getString("photo") %>">
+				<%=rs.getString("user_content") %></p>
 		</div>
-<%} %>
-	
 		
-		<hr/>	
+	
+<%} %>
 	</div>
 	</div>
 </body>
