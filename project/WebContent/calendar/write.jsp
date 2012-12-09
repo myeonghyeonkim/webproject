@@ -18,6 +18,9 @@
 <BODY>
 
 <%
+String user_king=request.getParameter("user_king");
+String user_part=request.getParameter("user_part");
+String meeting_name=request.getParameter("meeting_name");
 String year = request.getParameter("year");
 String month = request.getParameter("month");
 String day = request.getParameter("day");
@@ -39,7 +42,8 @@ String day = request.getParameter("day");
 
 	<TR>
         	<TD align='center' width='100' height='30' bgcolor='cccccc'>
-		<input type='hidden' name='cp_type' value='input'>            
+		<input type='hidden' name='cp_type' value='input'>
+		     
 		<font size='2'><b>Á¦ ¸ñ</b></font></TD>
         	<TD bgcolor='ededed'>
         	<input type='text' name='title' maxlength='20' size='38'></TD>

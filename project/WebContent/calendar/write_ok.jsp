@@ -3,6 +3,13 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
+
+String user_king=request.getParameter("user_king");
+String user_part=request.getParameter("user_part");
+String meeting_name=request.getParameter("meeting_name");
+%>
+<%if(user_king == user_part){ %>
+<% 
 String year = request.getParameter("year");
 String month = request.getParameter("month");
 String day = request.getParameter("day");
@@ -14,7 +21,7 @@ String content = request.getParameter("content");
 
 Class.forName("com.mysql.jdbc.Driver");
 Connection conn=null;
-
+try{
 String url="jdbc:mysql://localhost:3306/webpro";
 String user="admin";
 String user_pwd="aldks12";		
@@ -32,12 +39,21 @@ strSQL = strSQL + e_time + "','";
 strSQL = strSQL + position + "','";
 strSQL = strSQL + content + "')";
 
-stmt.executeUpdate(strSQL);
-
-stmt.close();
-conn.close();
+}
+catch(Exception e){
+	e.printStackTrace();
+}
 
 int imonth = Integer.parseInt(month);
 
 response.sendRedirect("main.jsp?year=" + year + "&month=" + (imonth - 1));
 %>
+
+<%
+}
+	else{%>
+	<script language="javascript">
+	alert("개설자만 쓸 수 있습니다.");
+	document.location="index.jsp?meeting_name=<%=meeting_name%>";
+	</script>
+<%}%>

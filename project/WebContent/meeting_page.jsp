@@ -132,7 +132,10 @@
 						</div>
 						</div>
 						<div id="meeting_info_right">
-				  			<div>지도가 들어갈 부분</div>
+				  			<div id="calendar">
+				  				<p>캘린더 부분</p>
+				  				<a href="calendar/main.jsp?&user_king=<%=user_id1%>&user_part=<%=user_id%>&meeting_name=<%=meeting_name%>">캘린더 접속</a>
+				  			</div>
 						</div>
 				</div>
 					<hr/>

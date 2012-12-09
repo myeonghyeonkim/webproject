@@ -24,8 +24,15 @@
 <%
 // Calendar클래스의 인스턴스 cal 생성 // 이걸 선언해야만 아래 year,month,date의 현재정보를 받아올수있는거야.,
 		Calendar cal = Calendar.getInstance();
+String user_king=request.getParameter("user_king"); //개설자 정보
+
+String user_part=request.getParameter("user_part"); // 개설자 정보
+
+String meeting_name=request.getParameter("meeting_name");
+
 
 // JSP 기본객체 request.getParameter를 사용하여 url로 부터 year, month정보를 로드
+
 String strYear = request.getParameter("year");
 String strMonth = request.getParameter("month");
 
@@ -121,9 +128,8 @@ for(int index = 1; index <= endDay; index++)
   	// 날짜를 1씩 증가시키면서 테이블을 생성하여 달력을 완성
 %>
       <TD width='14%' height='70' align='left' valign='top'>
-	  	<font size='2'><b><a href='write.jsp?year=<%=year%>&month=<%=month+1%>&day=<%=index%>'>
+	  	<font size='2'><b><a href='write.jsp?year=<%=year%>&month=<%=month+1%>&day=<%=index%>'></a>
 	  	<font color = <%=color %>><%=index%></a>
-	  
 <%
 	Connection conn=null;
 	PreparedStatement pstmt=null;
@@ -194,7 +200,7 @@ j = j+1;
 %>
 
 	  
-<%
+<% 
 newLine++;
 
 if(newLine == 7){

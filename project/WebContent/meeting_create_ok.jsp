@@ -98,7 +98,7 @@
 		<p>
  		<% if(rs.next())
 		 {%>	  
-		<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
+		<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=rs.getString("user_id")%>">
 		개설된페이지로가기</a>
 		<%} %>
 		</p>
