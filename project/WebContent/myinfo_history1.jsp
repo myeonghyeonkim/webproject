@@ -40,19 +40,28 @@ e.printStackTrace();
 <html>
 <head>
 <meta charset="UTF-8">
+	<link href="css/myinfo_history.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/base.css" rel="stylesheet">
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-<div id="history">
-	
+	<jsp:include page="share/myinfo_header.jsp">
+  <jsp:param name="current" value="Sign Up"/>
+	</jsp:include>
+	<div class="hero-unit">	
 	<p>내가 개설한 목록</p>
-	<div id="history_king">
+	<div id="history">
+	
 			<%while(rs.next()) { %>
-		<div id="history_content">
-				<div id="history_photo2">
-				<img src ="<%=rs.getString("group_image")%>" width="100" height="100">
+			<div id="history_1">
+				<div id="history_photo1">
+				<img src ="<%=rs.getString("group_image")%>" width="140" height="160">
 				</div>
-				<div id="history_content2">
+				<div id="history_content1">
 				<p>모임제목 : <%=rs.getString("meeting_subject")%></p>
 				<p>접수기간 : <%=rs.getString("sign_day_start")%><%=rs.getString("sign_time_start") %>
 										부터 <%=rs.getString("sign_day_end") %><%=rs.getString("sign_time_end") %></p>
@@ -61,13 +70,14 @@ e.printStackTrace();
 				</p> 
 					
 				<p>모임장소 : <%=rs.getString("meeting_place") %></p>
-				</div>
+				
 				<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name") %>">
-				<button type="submit" class="btn btn-large btn-block btn-primary">페이지로가기</button>
+				<button type="submit" class="btn btn-primary">페이지로가기</button>
 				</a>
 				<a href="partperson_minus1.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=id%>">
-				<button type="submit" class="btn btn-large btn-block btn-primary">참여취소</button>
+				<button type="submit" class="btn btn-primary">참여취소</button>
 				</a>
+				</div>
 		</div>
 		<hr/>
 		<%} %>

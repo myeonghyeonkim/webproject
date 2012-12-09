@@ -57,10 +57,12 @@ e.printStackTrace();
 		<p>내가 참여한 목록</p>
 		
 		<div id="history">
+		
 		<%while(rs.next()) { %>
 			<div id="history_1">
+				
 				<div id="history_photo1">
-					<img src ="<%=rs.getString("group_image")%>" width="100" height="100">
+					<img src ="<%=rs.getString("group_image")%>" width="140" height="160">
 				</div>
 				<div id="history_content1">
 					<p>모임제목 : <%=rs.getString("meeting_subject")%></p>
@@ -68,15 +70,13 @@ e.printStackTrace();
 											부터 <%=rs.getString("sign_day_end") %><%=rs.getString("sign_time_end") %></p>
 					<p>모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start") %>
 										부터 <%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %>
-					</p> 
-					
-				<p>모임장소 : <%=rs.getString("meeting_place") %></p>
-				
+					</p> 					
+					<p>모임장소 : <%=rs.getString("meeting_place") %></p>				
 					<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name") %>">
-				<button type="submit">페이지로가기</button>
+				<button type="submit" class="btn btn-primary">페이지로가기</button>
 				</a>
 				<a href="partperson_minus.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=id%>">
-				<button type="submit">참여취소</button>
+				<button type="submit" class="btn btn-primary">참여취소</button>
 				</a>
 				</div>
 			</div>

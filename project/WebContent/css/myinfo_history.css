@@ -39,11 +39,16 @@ input,button,textarea,select{font-size:100%;}
 	border: 2px solid #d7e9f9;
 	-moz-border-radius: 10px;
 }
-#history_photo1{width:30%; 
+
+#history_photo1{width:150px;
+height:180px;
+display:block; float:left;
 border: 2px solid #d7e9f9;
 	-moz-border-radius: 10px;
 	}
-#history_content1{width:60%;
+#history_content1{width:670px;
+display:block; float:center;
 border: 2px solid #d7e9f9;
 	-moz-border-radius: 10px;
+	
 	}

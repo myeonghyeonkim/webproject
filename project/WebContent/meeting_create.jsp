@@ -172,8 +172,8 @@
 			<div class="hero-unit_4">
 				<table border="1">
 					<tr>
-						<td>그룹명</td>
-						<td>참여인원</td>
+						<th>그룹명</th>
+						<th>참여인원</th>
 					</tr>
 					<tr>
 						<td><input type="text" name="meeting_name" placeholder="기본 그룹"></td>
@@ -298,7 +298,7 @@
 					<input type="text" name="input_place">
 			<div>지도</div>
 					<div id="map">
-						<input type="text" name="map">
+						<input type="text" id="q" value="주소검색" class="inputBox" onfocus="javascript:setInputLayout('q');" onkeydown="javascript:if(event.keyCode == 13) searchPosition('q');"/>
 					</div>
 			</div>
 			</div>
