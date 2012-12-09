@@ -24,7 +24,7 @@ String year = request.getParameter("year");
 String month = request.getParameter("month");
 String day = request.getParameter("day");
 String no = request.getParameter("no");
-Connection conn=null;
+Connection conn =null;
 Class.forName("com.mysql.jdbc.Driver");
 
 String url="jdbc:mysql://localhost:3306/webpro";
@@ -41,8 +41,6 @@ rs.next();
 %> 
 
 <center><font size='5'><b><%=year%>년 <%=month%>월 <%=day%>일 일정 내용</b>
-
-
         </font></p>
 
 <TABLE border='0' width='800' cellpadding='0' cellspacing='0'>

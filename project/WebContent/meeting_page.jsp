@@ -8,7 +8,8 @@
 	request.setCharacterEncoding("utf-8");
   //스터디그룹아이디
   String user_id1=request.getParameter("user_id");
-	String user_id=(String)session.getAttribute("id");
+	String user_id=(String)session.getAttribute("id"); //유저
+	
 	//int n=LAST_INSERT_ID();
 	String meeting_name=request.getParameter("meeting_name");
 	System.out.println(meeting_name);
@@ -110,9 +111,9 @@
 							<% if(rs.next()){%>
 						<div class="meeting_info_left_1">
 							<img src="<%=image_path %>" width="100" height ="100" class="imgpolaroid"/>
-								<form action="meeting_photo.jsp" method="post" enctype="multipart/form-data">
+								<form action="meeting_photo.jsp?meeting_name=<%=meeting_name %>" method="post" enctype="multipart/form-data">
 									<input type="file" name="image" value="찾기"><p>
-									<input type="submit" class="btn btn-primary btn-large" value="전송">
+									<input type="submit" class="btn btn-primary btn-large" value="전송">	
 								</form>
 						</div>
 						<div class="meeting_info_left_2">
@@ -128,13 +129,14 @@
 								<a href="partperson_minus.jsp?user_id=<%=user_id%>&meeting_name=<%=meeting_name%>">
 								<button class="btn btn-large" type="button">참여취소</button>
 								</a>
+						
 							<p>총 모집인원 : <%=rs.getString("part_person") %> 명 / 현재 참여자 : <%=num%>명</p>
 						</div>
 						</div>
 						<div id="meeting_info_right">
 				  			<div id="calendar">
 				  				<p>캘린더 부분</p>
-				  				<a href="calendar/main.jsp?&user_king=<%=user_id1%>&user_part=<%=user_id%>&meeting_name=<%=meeting_name%>">캘린더 접속</a>
+				  				<a href="calendar/main.jsp">캘린더 접속</a>
 				  			</div>
 						</div>
 				</div>
@@ -196,7 +198,7 @@
 			<p>참여자 명단(정원 x명 / x명참여)</p>
 				
 		<% while(rs.next()) {%>							
-		 			<img src ="<%=rs.getString("photo") %>" width="100" height="100">		 	
+		 	<a href="myinfo_main.jsp?user_id=<%=rs.getString("member.user_id") %>"><img src ="<%=rs.getString("photo") %>" width="100" height="100"></a>		 	
 		 
 <%}%>
 		</div>

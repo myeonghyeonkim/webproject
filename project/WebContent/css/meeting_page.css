@@ -58,13 +58,13 @@ input,button,textarea,select{font-size:100%;}
 }
 #meeting_info_left div.meeting_info_left_1{
 	display:block; float:left; width:30%; height:85%;
-	 background-color:red;
+	 background-color:#FFF;
 	 margin:5px;
 	 border-radius: 10px;
 }
 #meeting_info_left div.meeting_info_left_2{
 	display:block; float:left; width:65%; height:85%;
-	 background-color:red;
+	 background-color:#FFF;
 	 margin:5px;
 	 border-radius: 10px;
 	 padding:5px 0 0 5px;

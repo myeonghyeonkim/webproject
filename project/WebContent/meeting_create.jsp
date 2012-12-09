@@ -21,33 +21,7 @@
 	<script type="text/javascript" src="js/ui.datepicker.js"></script>
 	<script type="text/javascript" src="js/ui.datepicker-ko.js"></script>
 <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d2e4aaa3bb6abfb844cb5bdbaecacf2bc7faa5a2"></script>
-<script type="text/javascript">
-	window.onload = function() {
-	var position = new daum.maps.LatLng(37.22182591381256, 127.18690184074735);
 
-	var map = new daum.maps.Map(document.getElementById('map'), {
-		center: position,
-		level: 4,
-		mapTypeId: daum.maps.MapTypeId.HYBRID
-	});
-	var zoomControl = new daum.maps.ZoomControl();
-	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
-	var mapTypeControl = new daum.maps.MapTypeControl();
-	map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
-
-
-	var marker = new daum.maps.Marker({
-		position: position
-	});
-	marker.setMap(map);
-
-	var infowindow = new daum.maps.InfoWindow({
-		content: 'Hello, MJ!'
-	});
-	infowindow.open(map, marker);
-	
-	};
-</script>
 
 <script type="text/javascript">
 
@@ -160,10 +134,9 @@
 			</div>
 			<div class="hero-unit_3">
 				<div class="hero-unit_3_1">
-					<div>대표이미지</div>  
-						<div><img src="..." class="img-polaroid"></div>
-						<div><input type="text" name="group_image"></div>
-					<div>상세정보 입력</div>	
+					  
+						
+					<div>상세정보 입력</div>
 					<div>
 						<textarea name="intro" cols="70" rows="10"></textarea>
 					</div>
@@ -295,12 +268,7 @@
 			</div>
 			<div class="hero-unit_6">
 			<div>모임장소입력</div>
-					<input type="text" name="input_place">
-			<div>지도</div>
-					<div id="map">
-						<input type="text" id="q" value="주소검색" class="inputBox" onfocus="javascript:setInputLayout('q');" onkeydown="javascript:if(event.keyCode == 13) searchPosition('q');"/>
-					</div>
-			</div>
+					<input type="text" name="input_place" size="90">
 			</div>
 			<div>
 				<input type="submit" value="모임개설하기">	

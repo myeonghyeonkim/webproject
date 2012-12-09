@@ -31,7 +31,7 @@
    String name = (String)files.nextElement(); // input type=file 인 파라미터 이름
    String filename = multi.getFilesystemName(name); // 서버에 저장된 파일이름
    String orgFileName = realFolder+"\\"+filename; //경로+ 원본 이미지 파일명
-   thumbFileName = realFolder+"\\small"+id + ".jpg"; //경로+ 썸네일 이미지파일명
+   thumbFileName = realFolder+"\\small"+meeting + ".jpg"; //경로+ 썸네일 이미지파일명
 
    group_image = "meeting_photo\\small" + meeting + ".jpg";
    
@@ -84,17 +84,12 @@
 		pstmt.executeUpdate();
 		
 
-	response.sendRedirect("meeting_page.jsp?"+meeting);
+		response.sendRedirect("meeting_page.jsp");
+	}catch(Exception e){
+		e.printStackTrace();
+	}
 %>
-<%
-}catch(Exception e){
-	e.printStackTrace();
-}finally{
-	if(rs!=null) try{rs.close();} catch(Exception e){}
-	if(pstmt!=null) try{pstmt.close();} catch(Exception e){}
-	if(conn!=null) try{conn.close();} catch(Exception e){}
-}
-%>
+
 
 
 

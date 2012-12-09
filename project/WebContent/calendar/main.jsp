@@ -1,10 +1,6 @@
-<%@ page isThreadSafe="true" %>
-<%@ page session="true" %>
-<%@ page buffer="4kb" autoFlush="true" %>
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import = "java.sql.*, java.util.*" %>
-<%@ page import = "java.util.Calendar" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<% request.setCharacterEncoding("euc-kr"); %>
 
 <HTML>
 <HEAD>
@@ -22,24 +18,17 @@
 </style>
 
 <%
-// Calendar클래스의 인스턴스 cal 생성 // 이걸 선언해야만 아래 year,month,date의 현재정보를 받아올수있는거야.,
-		Calendar cal = Calendar.getInstance();
-String user_king=request.getParameter("user_king"); //개설자 정보
-
-String user_part=request.getParameter("user_part"); // 개설자 정보
-
-String meeting_name=request.getParameter("meeting_name");
-
+// Calendar클래스의 인스턴스 cal 생성
+java.util.Calendar cal = java.util.Calendar.getInstance();
 
 // JSP 기본객체 request.getParameter를 사용하여 url로 부터 year, month정보를 로드
-
 String strYear = request.getParameter("year");
 String strMonth = request.getParameter("month");
 
 // 날짜를 저장하는 변수 year, month, date에 오늘 날짜를 설정
-int year = cal.get(Calendar.YEAR);
-int month = cal.get(Calendar.MONTH);
-int date = cal.get(Calendar.DATE);
+int year = cal.get(java.util.Calendar.YEAR);
+int month = cal.get(java.util.Calendar.MONTH);
+int date = cal.get(java.util.Calendar.DATE);
 
 // url을 통해 읽어온 표시하고자 하는 날짜의 정보를 설정
 if(strYear != null)
@@ -50,11 +39,11 @@ if(strYear != null)
 
 cal.set(year, month, 1);
 
-int startDay = cal.getMinimum(Calendar.DATE);
+int startDay = cal.getMinimum(java.util.Calendar.DATE);
 // 표시하고자 하는 달의 마지막 날짜를 설정
-int endDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+int endDay = cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH);
 // 표시하고자 하는 달의 시작 날짜의 요일을 설정
-int start = cal.get(Calendar.DAY_OF_WEEK);
+int start = cal.get(java.util.Calendar.DAY_OF_WEEK);
 int newLine = 0;
 int j = 0;
 %>
@@ -128,23 +117,21 @@ for(int index = 1; index <= endDay; index++)
   	// 날짜를 1씩 증가시키면서 테이블을 생성하여 달력을 완성
 %>
       <TD width='14%' height='70' align='left' valign='top'>
-	  	<font size='2'><b><a href='write.jsp?year=<%=year%>&month=<%=month+1%>&day=<%=index%>'></a>
+	  	<font size='2'><b><a href='write.jsp?year=<%=year%>&month=<%=month+1%>&day=<%=index%>'>
 	  	<font color = <%=color %>><%=index%></a>
+	  
 <%
-	Connection conn=null;
-	PreparedStatement pstmt=null;
-	ResultSet rs=null;
-	Class.forName("com.mysql.jdbc.Driver");
-	String url="jdbc:mysql://localhost:3306/webpro";
-	String user="admin";
-	String user_pwd="aldks12";		
-	conn = DriverManager.getConnection(url, user, user_pwd);
+Connection conn =null;
+Class.forName("com.mysql.jdbc.Driver");
 
+String url="jdbc:mysql://localhost:3306/webpro";
+String user="admin";
+String user_pwd="aldks12";		
+conn = DriverManager.getConnection(url, user, user_pwd);
 	Statement stmt = conn.createStatement();
-	String sql = "SELECT * FROM calendar WHERE year='" + year + "'and month='" + (month + 1) + "' and day='" + index +"'";
 
 	String strSQL = "SELECT * FROM calendar WHERE year='" + year + "'and month='" + (month + 1) + "' and day='" + index +"'";
-	rs = stmt.executeQuery(strSQL);  		
+	ResultSet rs = stmt.executeQuery(strSQL);  		
   			
 while (rs.next()){
 %>
@@ -156,7 +143,7 @@ while (rs.next()){
 	out.println(strTitle);
 %>
 
-</a><br>tr
+</a><br>
                         
 <DIV id='<%= "HideShow" + j%>'style="visibility:hidden;position:
                                 absolute;left:369px; top:227px; width:157px; 
@@ -200,7 +187,7 @@ j = j+1;
 %>
 
 	  
-<% 
+<%
 newLine++;
 
 if(newLine == 7){

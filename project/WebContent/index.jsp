@@ -36,6 +36,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
+
 	<meta charset="utf-8">
 	<title>STUDY-MEETING</title>
 	<link href="css/base.css" rel="stylesheet" type="text/css">
@@ -105,13 +106,13 @@
 			<div id="top_bottom">
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="#">Home</a></li>
-					<li><a href="myinfo_main.jsp">내정보관리</a></li>
+					<a href="myinfo_main.jsp">내정보관리</a></li>
 				</ul>
 			</div>
 		</div>
 		<div id="body">
 			<div class="body_1">
-				<p><img src="C:\Users\0\project\webproject\project\WebContent\image\study_background.JPG" alt="배경화면 불가"></img></p>
+				<img src="image/study_background.jpg" alt="배경화면 불가" width="600" height="5"></img>
 			</div>
 			<div class="body_2">
 				 <div id="login_state">

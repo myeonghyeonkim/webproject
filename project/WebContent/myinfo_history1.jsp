@@ -66,7 +66,7 @@ e.printStackTrace();
 				<p>접수기간 : <%=rs.getString("sign_day_start")%><%=rs.getString("sign_time_start") %>
 										부터 <%=rs.getString("sign_day_end") %><%=rs.getString("sign_time_end") %></p>
 				<p>모임기간 : <%=rs.getString("meeting_day_start")%><%=rs.getString("meeting_time_start") %>
-										부터 <%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %>
+									     부터 <%=rs.getString("meeting_day_end") %><%=rs.getString("meeting_time_end") %>
 				</p> 
 					
 				<p>모임장소 : <%=rs.getString("meeting_place") %></p>
@@ -76,6 +76,9 @@ e.printStackTrace();
 				</a>
 				<a href="partperson_minus1.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=id%>">
 				<button type="submit" class="btn btn-primary">참여취소</button>
+				</a>
+				<a href="partperson_supervise.jsp?meeting_name=<%=rs.getString("meeting_name")%>&user_id=<%=id%>">
+				<button type="submit" class="btn btn-primary">참여자관리</button>
 				</a>
 				</div>
 		</div>

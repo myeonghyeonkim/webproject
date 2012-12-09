@@ -34,9 +34,9 @@ String year = request.getParameter("year");
 String month = request.getParameter("month");
 String day = request.getParameter("day");
 String no = request.getParameter("no");
-        
+        Connection conn=null;
 Class.forName("com.mysql.jdbc.Driver");
-Connection conn=null;
+
 String url="jdbc:mysql://localhost:3306/webpro";
 String user="admin";
 String user_pwd="aldks12";		

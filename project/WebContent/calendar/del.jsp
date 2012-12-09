@@ -3,8 +3,9 @@
 <% request.setCharacterEncoding("euc-kr"); %>
 
 <%
-Class.forName("com.mysql.jdbc.Driver");
-Connection conn=null;
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection conn =null;
+
 String url="jdbc:mysql://localhost:3306/webpro";
 String user="admin";
 String user_pwd="aldks12";		
