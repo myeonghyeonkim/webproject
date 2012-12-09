@@ -12,10 +12,13 @@ String title = request.getParameter("title");
 String position = request.getParameter("position");
 String content = request.getParameter("content");
 
-Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Class.forName("com.mysql.jdbc.Driver");
+Connection conn=null;
 
-String url = "jdbc:odbc:dbMember";
-Connection conn = DriverManager.getConnection(url,"Member","apple");
+String url="jdbc:mysql://localhost:3306/webpro";
+String user="admin";
+String user_pwd="aldks12";		
+conn = DriverManager.getConnection(url, user, user_pwd);
 
 Statement stmt = conn.createStatement();
 

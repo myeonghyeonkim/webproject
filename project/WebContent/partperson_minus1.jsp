@@ -24,7 +24,7 @@
  			String user_pwd="aldks12";		
  			conn = DriverManager.getConnection(url, user, user_pwd);
 			
- 			String sql="DELETE FROM member WHERE user_id=? and meeting_name=?";
+ 			String sql="DELETE FROM studygroup user_id=? and meeting_name=?";
  			pstmt=conn.prepareStatement(sql);
  			pstmt.setString(1,user_id);
  			pstmt.setString(2,meeting_name);

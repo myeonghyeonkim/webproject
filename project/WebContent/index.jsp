@@ -33,7 +33,7 @@
 		e.printStackTrace();
 	}
 %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 	<meta charset="utf-8">
@@ -44,6 +44,7 @@
 	<script src="js/jquery-1.8.2.min.js"></script>	
 	<script src="js/jquery.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
 	<script src="js/bootstrap.min.js"></script>
 	<script language="javascript">
 	function logOut() {
@@ -60,7 +61,7 @@
 				var category = $(this).attr("title");
 				$("#newslist li").fadeOut("fast");
 				if(category == "all"){$("#newslist li").fadeIn("slow");}
-				else{$("#newslist li[class*="+category+"]").fadeIn("slow");}
+				else{$("#newslist li[class*="+category+"]").fadeIn("fast");}
 			});
 	});
 	$(document).ready(function(){
@@ -69,7 +70,7 @@
 			var category = $(this).attr("title");
 			$("#newslist li").fadeOut("fast");
 			if(category == "all"){$("#newslist li").fadeIn("slow");}
-			else{$("#newslist li[class*="+category+"]").fadeIn("slow");}
+			else{$("#newslist li[class*="+category+"]").fadeIn("fast");}
 		});
 });
 	$(document).ready(function(){
@@ -78,7 +79,7 @@
 			var category = $(this).attr("title");
 			$("#newslist li").fadeOut("fast");
 			if(category == "all"){$("#newslist li").fadeIn("slow");}
-			else{$("#newslist li[class*="+category+"]").fadeIn("slow");}
+			else{$("#newslist li[class*="+category+"]").fadeIn("fast");}
 		});
 });
 	$(document).ready(function(){
@@ -87,7 +88,7 @@
 			var category = $(this).attr("title");
 			$("#newslist li").fadeOut("fast");
 			if(category == "all"){$("#newslist li").fadeIn("slow");}
-			else{$("#newslist li[class*="+category+"]").fadeIn("slow");}
+			else{$("#newslist li[class*="+category+"]").fadeIn("fast");}
 		});
 });
 </script>
@@ -224,13 +225,13 @@
 				<div id="newslist">
     				<h3>모임정보 목록</h3>
     					<ul>
-    
+ <li class="pro"><br/>   
 <%
 	String sql = "select * from studygroup where category_1='pro'";
 	pstmt = conn.prepareStatement(sql);	
 	rs = pstmt.executeQuery();
 %>
-    	<li class="pro"><br/>
+    	
       	<%while(rs.next()) {%>
       	
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
@@ -251,12 +252,13 @@
       </li>
        
    <%} %>
+   <li class="software">
         <%
 		String sql1 = "select * from studygroup where category_1='software'";  
 		pstmt = conn.prepareStatement(sql1);	
 		rs = pstmt.executeQuery();
 %>
-			<li class="software"><br/>
+			<br/>
       	<%while(rs.next()) {%>
       	<a href="meeting_page.jsp?meeting_name=<%=rs.getString("meeting_name")%>">
       		<div id="meeting_photo">

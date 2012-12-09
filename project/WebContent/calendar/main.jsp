@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import = "java.sql.*, java.util.*" %>
 <%@ page import = "java.util.Calendar" %>
-<% request.setCharacterEncoding("utf-8"); %> //한글을 올바로 얻기위한 request 기본객체 메소드 호출.
+<% request.setCharacterEncoding("utf-8"); %>
 
 <HTML>
 <HEAD>

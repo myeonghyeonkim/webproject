@@ -35,10 +35,12 @@ String month = request.getParameter("month");
 String day = request.getParameter("day");
 String no = request.getParameter("no");
         
-Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-
-String url = "jdbc:odbc:dbMember";
-Connection conn = DriverManager.getConnection(url,"Member","apple");
+Class.forName("com.mysql.jdbc.Driver");
+Connection conn=null;
+String url="jdbc:mysql://localhost:3306/webpro";
+String user="admin";
+String user_pwd="aldks12";		
+conn = DriverManager.getConnection(url, user, user_pwd);
 
 Statement stmt = conn.createStatement();
 
