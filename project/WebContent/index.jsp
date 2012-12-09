@@ -137,6 +137,7 @@
 							<h4>study-meeting에 오신걸 환영합니다.</h4>
 							<input type="button" class="logout" value="logout"
 							onclick="logOut()">
+							<a href="myinfo_main.jsp">내정보관리</a>
 							
 							<br/>
 							<br/>
