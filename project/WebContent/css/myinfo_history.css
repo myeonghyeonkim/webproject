@@ -31,24 +31,20 @@ input,button,textarea,select{font-size:100%;}
 }
 #history{
 	width:900px;
-	border: 2px solid #d7e9f9;
-	-moz-border-radius: 10px;	
+	
 }
 #history_1{
 	width:850px;
-	border: 2px solid #d7e9f9;
-	-moz-border-radius: 10px;
+
 }
 
 #history_photo1{width:150px;
 height:180px;
 display:block; float:left;
-border: 2px solid #d7e9f9;
-	-moz-border-radius: 10px;
+
 	}
 #history_content1{width:670px;
 display:block; float:center;
-border: 2px solid #d7e9f9;
-	-moz-border-radius: 10px;
+
 	
 	}

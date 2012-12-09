@@ -83,6 +83,9 @@ e.printStackTrace();
 		<%} %>
 	</div>
 </div>
+	<jsp:include page="share/footer.jsp">
+  <jsp:param name="current" value="Sign Up"/>
+	</jsp:include>
 </body>
 </html>
 

@@ -111,6 +111,7 @@
 		</div>
 		<div id="body">
 			<div class="body_1">
+				<p><img src="C:\Users\0\project\webproject\project\WebContent\image\study_background.JPG" alt="배경화면 불가"></img></p>
 			</div>
 			<div class="body_2">
 				 <div id="login_state">
